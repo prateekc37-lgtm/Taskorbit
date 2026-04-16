@@ -1,0 +1,201 @@
+Made with Perplexity
+// Smooth scroll for buttons with data-scroll
+document.querySelectorAll('[data-scroll]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('data-scroll');
+    const el = document.querySelector(target);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Mobile nav toggle
+const nav = document.querySelector('.nav');
+const navToggle = document.querySelector('.nav-toggle');
+
+if (nav && navToggle) {
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('nav-open');
+  });
+}
+
+// Year in footer
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+// Simple live revenue estimate counter
+const liveRevenueEl = document.getElementById('liveRevenue');
+let liveRevenue = 0;
+const monthlyRecovered = 150000; // ₹1,50,000 per month from missed calls
+const perSecond = monthlyRecovered / (30 * 24 * 60 * 60);
+
+if (liveRevenueEl) {
+  setInterval(() => {
+    liveRevenue += perSecond;
+    liveRevenueEl.textContent = '₹' + Math.round(liveRevenue).toLocaleString('en-IN');
+  }, 1000);
+}
+
+// Section fade-in on scroll
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+document.querySelectorAll('section[data-animate]').forEach((section) => observer.observe(section));
+
+// Lead store and admin dashboard demo
+const leadTableBody = document.getElementById('leadTableBody');
+const totalLeadsEl = document.getElementById('totalLeads');
+const todayLeadsEl = document.getElementById('todayLeads');
+const topBusinessTypeEl = document.getElementById('topBusinessType');
+const leads = [];
+
+function formatDateTime(dt) {
+  return dt.toLocaleDateString('en-IN', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  }) + ' ' + dt.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+}
+
+function updateDashboard() {
+  if (!totalLeadsEl || !todayLeadsEl || !topBusinessTypeEl || !leadTableBody) return;
+
+  // Update counters
+  totalLeadsEl.textContent = leads.length.toString();
+
+  const todayStr = new Date().toDateString();
+  const todayCount = leads.filter((l) => new Date(l.createdAt).toDateString() === todayStr).length;
+  todayLeadsEl.textContent = todayCount.toString();
+
+  // Top business type
+  if (leads.length === 0) {
+    topBusinessTypeEl.textContent = '—';
+  } else {
+    const counts = {};
+    leads.forEach((l) => {
+      const key = (l.businessType || 'Other').trim();
+      counts[key] = (counts[key] || 0) + 1;
+    });
+    let topType = 'Other';
+    let maxCount = 0;
+    Object.entries(counts).forEach(([type, count]) => {
+      if (count > maxCount) {
+        maxCount = count;
+        topType = type;
+      }
+    });
+    topBusinessTypeEl.textContent = topType;
+  }
+
+  // Update table
+  leadTableBody.innerHTML = '';
+  if (leads.length === 0) {
+    const tr = document.createElement('tr');
+    tr.className = 'empty-row';
+    const td = document.createElement('td');
+    td.colSpan = 5;
+    td.textContent = 'No leads yet. Submit the enquiry form to see leads appear here.';
+    tr.appendChild(td);
+    leadTableBody.appendChild(tr);
+    return;
+  }
+
+  leads
+    .slice()
+    .reverse()
+    .forEach((lead) => {
+      const tr = document.createElement('tr');
+
+      const tdName = document.createElement('td');
+      tdName.textContent = lead.name;
+      tr.appendChild(tdName);
+
+      const tdBusiness = document.createElement('td');
+      tdBusiness.textContent = lead.businessType;
+      tr.appendChild(tdBusiness);
+
+      const tdPhone = document.createElement('td');
+      tdPhone.textContent = lead.phone;
+      tr.appendChild(tdPhone);
+
+      const tdStatus = document.createElement('td');
+      const statusSpan = document.createElement('span');
+      statusSpan.className = 'status-pill';
+      statusSpan.textContent = 'New';
+      tdStatus.appendChild(statusSpan);
+      tr.appendChild(tdStatus);
+
+      const tdCreated = document.createElement('td');
+      tdCreated.textContent = formatDateTime(new Date(lead.createdAt));
+      tr.appendChild(tdCreated);
+
+      leadTableBody.appendChild(tr);
+    });
+}
+
+// Enquiry form handler
+const enquiryForm = document.getElementById('enquiryForm');
+const enquiryStatusEl = document.getElementById('enquiryStatus');
+
+if (enquiryForm) {
+  enquiryForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('enquiryName').value.trim();
+    const email = document.getElementById('enquiryEmail').value.trim();
+    const phone = document.getElementById('enquiryPhone').value.trim();
+    const businessType = document.getElementById('enquiryBusinessType').value.trim();
+    const message = document.getElementById('enquiryMessage').value.trim();
+
+    const lead = {
+      name,
+      email,
+      phone,
+      businessType,
+      message,
+      createdAt: new Date().toISOString(),
+    };
+
+    leads.push(lead);
+    updateDashboard();
+
+    if (enquiryStatusEl) {
+      enquiryStatusEl.textContent = 'Lead captured. Opening WhatsApp and preparing Sheet link…';
+    }
+
+    console.log('Lead captured (frontend only):', lead);
+
+    const baseSheetURL = 'https://docs.google.com/spreadsheets/d/your-google-sheet-id/edit';
+
+    const waText = encodeURIComponent(
+      'New TaskOrbitt AI enquiry%0A%0A' +
+        'Name: ' + name + '%0A' +
+        'Email: ' + email + '%0A' +
+        'Phone: ' + phone + '%0A' +
+        'Business type: ' + businessType + '%0A' +
+        'Message: ' + (message || 'N/A') + '%0A%0A' +
+        'Suggested next line: "Sir, sales call nahi hai, ek quick question tha…"'
+    );
+
+    const waURL = 'https://wa.me/919654524339?text=' + waText;
+
+    setTimeout(() => {
+      window.open(baseSheetURL, '_blank');
+    }, 400);
+
+    setTimeout(() => {
+      window.open(waURL, '_blank');
+    }, 700);
+
+    enquiryForm.reset();
+  });
+}
