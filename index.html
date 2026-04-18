@@ -1,201 +1,396 @@
-Made with Perplexity
-// Smooth scroll for buttons with data-scroll
-document.querySelectorAll('[data-scroll]').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const target = btn.getAttribute('data-scroll');
-    const el = document.querySelector(target);
-    if (!el) return;
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskOrbitt AI – Never Miss a Customer Call Again</title>
+  <meta name="description" content="TaskOrbitt AI Voice Agent answers, qualifies, and converts customer calls 24/7 so you save time, cut costs, and capture more revenue." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <div class="logo-mark" aria-hidden="true">
+          <span class="logo-dot"></span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">TaskOrbitt AI</span>
+          <span class="logo-sub">AI Voice Agent Platform</span>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-link" data-scroll="#why">Why TaskOrbitt</button>
+        <button class="nav-link" data-scroll="#roi">ROI</button>
+        <button class="nav-link" data-scroll="#features">Features</button>
+        <button class="nav-link" data-scroll="#pricing">Pricing</button>
+        <button class="nav-link" data-scroll="#contact">Contact</button>
+        <button class="nav-link nav-link-pill" data-scroll="#admin">Admin</button>
+        <button class="btn btn-sm btn-outline" data-scroll="#contact">Talk to sales</button>
+        <button class="btn btn-sm" data-scroll="#contact">Get free demo</button>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
-// Mobile nav toggle
-const nav = document.querySelector('.nav');
-const navToggle = document.querySelector('.nav-toggle');
+  <main id="top">
+    <section id="hero" class="section hero" data-animate>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">AI Voice Agents for serious businesses</p>
+          <h1 class="hero-title">Never Miss a Customer Call Again</h1>
+          <p class="hero-subtitle">AI Voice Agents that answer, qualify, and convert leads <strong>24/7</strong> — so you stop leaking revenue every time the phone rings and no one picks up.</p>
+          <div class="hero-bullets">
+            <div class="hero-bullet"><span class="bullet-dot"></span><span>0% missed calls</span></div>
+            <div class="hero-bullet"><span class="bullet-dot"></span><span>Up to 3× more lead conversion</span></div>
+            <div class="hero-bullet"><span class="bullet-dot"></span><span>Up to 80% lower cost vs human agents</span></div>
+          </div>
+          <div class="hero-ctas">
+            <button class="btn" data-scroll="#contact">Get free demo</button>
+            <button class="btn btn-outline" data-scroll="#contact">Talk to sales</button>
+          </div>
+          <p class="hero-footnote">See exactly how much time, money, and revenue you’re losing to missed and delayed calls — and how TaskOrbitt fixes it in days.</p>
+        </div>
+        <aside class="hero-panel" aria-label="Impact snapshot">
+          <div class="hero-metric-row">
+            <div>
+              <p class="metric-label">Live impact estimate</p>
+              <p class="metric-main" id="liveRevenue">₹0</p>
+              <p class="metric-sub">Revenue you could recover this month by answering every call.</p>
+            </div>
+            <div class="hero-mini">
+              <p class="mini-label">Typical results</p>
+              <ul>
+                <li>70–80% support cost reduction</li>
+                <li>2–3× more leads captured</li>
+                <li>24/7 call coverage</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hero-math">
+            <div class="math-row"><span>Missed calls / day</span><span>5</span></div>
+            <div class="math-row"><span>Value per customer</span><span>₹1,000</span></div>
+            <div class="math-row math-row-strong"><span>Revenue lost / month</span><span>₹150,000</span></div>
+            <p class="math-note">TaskOrbitt turns these lost calls into answered conversations, qualified leads, and booked revenue.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-if (nav && navToggle) {
-  navToggle.addEventListener('click', () => {
-    nav.classList.toggle('nav-open');
-  });
-}
+    <section id="why" class="section section-split" data-animate>
+      <div class="container split-grid">
+        <div>
+          <h2 class="section-title">Why businesses need AI Voice Agents now</h2>
+          <p class="section-subtitle">The problem isn’t lack of demand. It’s how many revenue opportunities die before anyone from your team can say “hello”.</p>
+          <div class="pill pill-danger">Pain points</div>
+          <ul class="list list-icon">
+            <li><span>Missed calls = lost revenue you never see in your reports.</span></li>
+            <li><span>Hiring and training staff is slow, expensive, and hard to scale.</span></li>
+            <li><span>No real 24/7 coverage — nights, weekends, holidays are dead spots.</span></li>
+            <li><span>Slow response kills intent — leads move on to faster competitors.</span></li>
+          </ul>
+        </div>
+        <div>
+          <div class="pill">How TaskOrbitt fixes it</div>
+          <ul class="list list-icon list-success">
+            <li><span>AI answers every call instantly, within a second of the first ring.</span></li>
+            <li><span>Never sleeps, never gets overwhelmed, never asks for leave.</span></li>
+            <li><span>Handles unlimited concurrent calls without extra headcount.</span></li>
+            <li><span>Automatically captures lead details and sends them to your systems.</span></li>
+          </ul>
+          <div class="inline-highlight">Result: fewer missed calls, faster response, more revenue — with lower operating cost.</div>
+        </div>
+      </div>
+    </section>
 
-// Year in footer
-const yearEl = document.getElementById('year');
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
+    <section id="roi" class="section" data-animate>
+      <div class="container">
+        <h2 class="section-title center">See the ROI clearly</h2>
+        <p class="section-subtitle center">TaskOrbitt AI pays for itself quickly by saving you on staffing, capturing more leads, and keeping your business always-on.</p>
+        <div class="grid grid-4 roi-grid">
+          <article class="card roi-card">
+            <div class="roi-icon">💰</div>
+            <h3>Cost saving</h3>
+            <p>Save up to <strong>70–80% on call center and reception costs</strong> by automating routine inbound calls.</p>
+          </article>
+          <article class="card roi-card">
+            <div class="roi-icon">📈</div>
+            <h3>Revenue increase</h3>
+            <p><strong>Increase lead conversion by up to 3×</strong> by answering every call and following up instantly.</p>
+          </article>
+          <article class="card roi-card">
+            <div class="roi-icon">⏱</div>
+            <h3>Time saving</h3>
+            <p><strong>Automate 100% of inbound calls</strong> so your team focuses on closing deals, not chasing ring tones.</p>
+          </article>
+          <article class="card roi-card">
+            <div class="roi-icon">🌍</div>
+            <h3>24/7 availability</h3>
+            <p><strong>Never miss a customer even at night</strong> — AI is always available, even when your team isn’t.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-// Simple live revenue estimate counter
-const liveRevenueEl = document.getElementById('liveRevenue');
-let liveRevenue = 0;
-const monthlyRecovered = 150000; // ₹1,50,000 per month from missed calls
-const perSecond = monthlyRecovered / (30 * 24 * 60 * 60);
+    <section id="features" class="section" data-animate>
+      <div class="container">
+        <h2 class="section-title center">Platform capabilities built for revenue teams</h2>
+        <p class="section-subtitle center">More than a bot — TaskOrbitt is your always-on, always-learning frontline for inbound calls.</p>
+        <div class="grid grid-3 feature-grid">
+          <article class="card feature-card">
+            <h3>AI call automation</h3>
+            <p>Answer, route, and resolve inbound calls automatically with smart workflows tuned to your business.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>Human-like conversations</h3>
+            <p>Natural, context-aware voice that understands intent, asks follow‑ups, and keeps callers engaged.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>Lead capture system</h3>
+            <p>Capture name, contact, intent, and next steps on every call — no more lost sticky notes or half-logged CRMs.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>CRM &amp; WhatsApp integration</h3>
+            <p>Push qualified leads into your CRM and sales WhatsApp instantly so your team can act fast.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>Multi-language support</h3>
+            <p>Serve customers in multiple languages and accents to match your markets and regions.</p>
+          </article>
+          <article class="card feature-card">
+            <h3>Smart call routing</h3>
+            <p>Route VIPs and hot leads to the right people while AI handles FAQs and low-value calls.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-if (liveRevenueEl) {
-  setInterval(() => {
-    liveRevenue += perSecond;
-    liveRevenueEl.textContent = '₹' + Math.round(liveRevenue).toLocaleString('en-IN');
-  }, 1000);
-}
+    <section id="how" class="section section-split" data-animate>
+      <div class="container split-grid">
+        <div>
+          <h2 class="section-title">How TaskOrbitt works in your business</h2>
+          <p class="section-subtitle">Simple for your callers. Powerful behind the scenes.</p>
+          <div class="flow">
+            <div class="flow-step">
+              <span class="flow-label">Step 1</span>
+              <p><strong>Caller dials your business number.</strong></p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="flow-label">Step 2</span>
+              <p><strong>AI Voice Agent answers instantly</strong> with your brand greeting.</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="flow-label">Step 3</span>
+              <p><strong>Understands the request</strong> — sales, support, booking, information.</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="flow-label">Step 4</span>
+              <p><strong>Captures lead details</strong> and key questions automatically.</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="flow-label">Step 5</span>
+              <p><strong>Sends to WhatsApp/CRM</strong> or routes to your team to close.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="card usecase-card">
+          <h3>Where TaskOrbitt fits</h3>
+          <ul class="list">
+            <li><strong>Real estate</strong> – capture and qualify property enquiries before competitors call back.</li>
+            <li><strong>Clinics</strong> – handle appointment booking and rescheduling without front desk overload.</li>
+            <li><strong>E‑commerce</strong> – answer delivery, order, and product questions automatically.</li>
+            <li><strong>Finance</strong> – qualify loan and investment leads with compliant scripts.</li>
+            <li><strong>Coaching institutes</strong> – manage admission, fee, and batch enquiries at scale.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
 
-// Section fade-in on scroll
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
+    <section id="pricing" class="section" data-animate>
+      <div class="container">
+        <h2 class="section-title center">Pricing that scales with your growth</h2>
+        <p class="section-subtitle center">Start small, prove ROI, and grow into full coverage across teams and locations.</p>
+        <div class="grid grid-3 pricing-grid">
+          <article class="card pricing-card">
+            <p class="plan-name">Starter</p>
+            <p class="plan-price">$19<span>/month</span></p>
+            <p class="plan-tagline">For solo founders and small teams just starting with AI calls.</p>
+            <ul class="plan-list">
+              <li>Up to 500 calls / month</li>
+              <li>Single number</li>
+              <li>Basic lead capture</li>
+            </ul>
+            <button class="btn btn-outline plan-cta" data-scroll="#contact">Start with Starter</button>
+          </article>
+          <article class="card pricing-card pricing-card-featured">
+            <div class="plan-badge">Best for growing businesses</div>
+            <p class="plan-name">Growth</p>
+            <p class="plan-price">$49<span>/month</span></p>
+            <p class="plan-tagline">For teams that want serious coverage and measurable ROI.</p>
+            <ul class="plan-list">
+              <li>Up to 3,000 calls / month</li>
+              <li>Multiple numbers &amp; teams</li>
+              <li>CRM &amp; WhatsApp integration</li>
+              <li>Advanced reporting</li>
+            </ul>
+            <button class="btn plan-cta" data-scroll="#contact">Choose Growth</button>
+          </article>
+          <article class="card pricing-card">
+            <p class="plan-name">Enterprise</p>
+            <p class="plan-price">Custom</p>
+            <p class="plan-tagline">For serious businesses that can’t afford missed revenue.</p>
+            <ul class="plan-list">
+              <li>Unlimited calls &amp; numbers</li>
+              <li>Custom SLAs &amp; onboarding</li>
+              <li>Private deployment options</li>
+              <li>Dedicated success team</li>
+            </ul>
+            <button class="btn btn-outline plan-cta" data-scroll="#contact">Talk to sales</button>
+          </article>
+        </div>
+      </div>
+    </section>
 
-document.querySelectorAll('section[data-animate]').forEach((section) => observer.observe(section));
+    <section id="testimonials" class="section" data-animate>
+      <div class="container">
+        <h2 class="section-title center">What customers see in their numbers</h2>
+        <p class="section-subtitle center">Real business impact from answering every call and capturing every lead.</p>
+        <div class="grid grid-3 testimonial-grid">
+          <article class="card testimonial-card">
+            <p class="quote">“TaskOrbitt increased our sales by roughly <strong>40%</strong> in 2 months. We simply stopped losing hot leads to voicemail.”</p>
+            <p class="author">Founder, real estate agency</p>
+          </article>
+          <article class="card testimonial-card">
+            <p class="quote">“We reduced support cost by about <strong>60%</strong> while improving response times. AI now handles all first‑line calls.”</p>
+            <p class="author">COO, e‑commerce brand</p>
+          </article>
+          <article class="card testimonial-card">
+            <p class="quote">“We basically never miss a customer call now. Nights and weekends generate leads instead of silence.”</p>
+            <p class="author">Owner, multi‑location clinic group</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-// Lead store and admin dashboard demo
-const leadTableBody = document.getElementById('leadTableBody');
-const totalLeadsEl = document.getElementById('totalLeads');
-const todayLeadsEl = document.getElementById('todayLeads');
-const topBusinessTypeEl = document.getElementById('topBusinessType');
-const leads = [];
+    <section id="contact" class="section" data-animate>
+      <div class="container split-grid">
+        <div>
+          <h2 class="section-title">Let’s see what TaskOrbitt can do for your calls</h2>
+          <p class="section-subtitle">Tell us a bit about your business. We’ll share a short demo plus a concrete plan to recover missed revenue.</p>
+          <div class="contact-highlights">
+            <div class="contact-pill">No long forms</div>
+            <div class="contact-pill">No obligation</div>
+            <div class="contact-pill">Outcome-focused demo</div>
+          </div>
+          <div class="contact-meta">
+            <p>Email: <a href="mailto:taskorbitt@gmail.com">taskorbitt@gmail.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/919654524339" target="_blank" rel="noopener noreferrer">+91 96545 24339</a></p>
+          </div>
+        </div>
+        <div>
+          <form id="enquiryForm" class="card form-card">
+            <h3 class="form-title">Enquiry form</h3>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="enquiryName">Name</label>
+                <input id="enquiryName" name="name" type="text" required placeholder="Your full name" />
+              </div>
+              <div class="form-field">
+                <label for="enquiryEmail">Email</label>
+                <input id="enquiryEmail" name="email" type="email" required placeholder="you@company.com" />
+              </div>
+              <div class="form-field">
+                <label for="enquiryPhone">Phone</label>
+                <input id="enquiryPhone" name="phone" type="tel" required placeholder="Your phone / WhatsApp" />
+              </div>
+              <div class="form-field">
+                <label for="enquiryBusinessType">Business type</label>
+                <input id="enquiryBusinessType" name="businessType" type="text" required placeholder="Clinic, real estate, e‑commerce…" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="enquiryMessage">What’s happening with your calls today?</label>
+              <textarea id="enquiryMessage" name="message" rows="3" placeholder="Example: We miss inquiries in the evening / can’t answer all marketing calls…"></textarea>
+            </div>
+            <div class="form-footer">
+              <p id="enquiryStatus" class="form-status">We’ll respond with a demo link + ROI breakdown for your business.</p>
+              <button type="submit" class="btn">Get free demo</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
 
-function formatDateTime(dt) {
-  return dt.toLocaleDateString('en-IN', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-  }) + ' ' + dt.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
-}
+    <section id="admin" class="section" data-animate>
+      <div class="container">
+        <h2 class="section-title">Lead overview (demo admin dashboard)</h2>
+        <p class="section-subtitle">TaskOrbitt AI plugs into your systems so you can see every call, every lead, and every opportunity in one place.</p>
+        <div class="grid grid-3 admin-metrics">
+          <article class="card metric-card">
+            <p class="metric-label">Total leads captured</p>
+            <p class="metric-main" id="totalLeads">0</p>
+            <p class="metric-sub">From website forms and AI calls.</p>
+          </article>
+          <article class="card metric-card">
+            <p class="metric-label">Today’s leads</p>
+            <p class="metric-main" id="todayLeads">0</p>
+            <p class="metric-sub">New inquiries captured today.</p>
+          </article>
+          <article class="card metric-card">
+            <p class="metric-label">Top business type</p>
+            <p class="metric-main" id="topBusinessType">—</p>
+            <p class="metric-sub">Where AI is seeing the most demand.</p>
+          </article>
+        </div>
+        <div class="card admin-table-card">
+          <div class="admin-table-header">
+            <h3>Leads</h3>
+            <p class="admin-table-sub">This demo dashboard shows leads from your enquiry form in real time. In production, TaskOrbitt connects to your CRM.</p>
+          </div>
+          <div class="table-wrapper">
+            <table class="table" aria-label="Lead list">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Business type</th>
+                  <th>Phone</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                </tr>
+              </thead>
+              <tbody id="leadTableBody">
+                <tr class="empty-row">
+                  <td colspan="5">No leads yet. Submit the enquiry form to see leads appear here.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-function updateDashboard() {
-  if (!totalLeadsEl || !todayLeadsEl || !topBusinessTypeEl || !leadTableBody) return;
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> TaskOrbitt AI. All rights reserved.</p>
+      <p>Built for teams who care about every customer call.</p>
+    </div>
+  </footer>
 
-  // Update counters
-  totalLeadsEl.textContent = leads.length.toString();
+  <a class="whatsapp-fab" href="https://wa.me/919654524339?text=Hi%2C%20I%20want%20AI%20Voice%20Agent%20for%20my%20business" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span>➤</span>
+  </a>
 
-  const todayStr = new Date().toDateString();
-  const todayCount = leads.filter((l) => new Date(l.createdAt).toDateString() === todayStr).length;
-  todayLeadsEl.textContent = todayCount.toString();
-
-  // Top business type
-  if (leads.length === 0) {
-    topBusinessTypeEl.textContent = '—';
-  } else {
-    const counts = {};
-    leads.forEach((l) => {
-      const key = (l.businessType || 'Other').trim();
-      counts[key] = (counts[key] || 0) + 1;
-    });
-    let topType = 'Other';
-    let maxCount = 0;
-    Object.entries(counts).forEach(([type, count]) => {
-      if (count > maxCount) {
-        maxCount = count;
-        topType = type;
-      }
-    });
-    topBusinessTypeEl.textContent = topType;
-  }
-
-  // Update table
-  leadTableBody.innerHTML = '';
-  if (leads.length === 0) {
-    const tr = document.createElement('tr');
-    tr.className = 'empty-row';
-    const td = document.createElement('td');
-    td.colSpan = 5;
-    td.textContent = 'No leads yet. Submit the enquiry form to see leads appear here.';
-    tr.appendChild(td);
-    leadTableBody.appendChild(tr);
-    return;
-  }
-
-  leads
-    .slice()
-    .reverse()
-    .forEach((lead) => {
-      const tr = document.createElement('tr');
-
-      const tdName = document.createElement('td');
-      tdName.textContent = lead.name;
-      tr.appendChild(tdName);
-
-      const tdBusiness = document.createElement('td');
-      tdBusiness.textContent = lead.businessType;
-      tr.appendChild(tdBusiness);
-
-      const tdPhone = document.createElement('td');
-      tdPhone.textContent = lead.phone;
-      tr.appendChild(tdPhone);
-
-      const tdStatus = document.createElement('td');
-      const statusSpan = document.createElement('span');
-      statusSpan.className = 'status-pill';
-      statusSpan.textContent = 'New';
-      tdStatus.appendChild(statusSpan);
-      tr.appendChild(tdStatus);
-
-      const tdCreated = document.createElement('td');
-      tdCreated.textContent = formatDateTime(new Date(lead.createdAt));
-      tr.appendChild(tdCreated);
-
-      leadTableBody.appendChild(tr);
-    });
-}
-
-// Enquiry form handler
-const enquiryForm = document.getElementById('enquiryForm');
-const enquiryStatusEl = document.getElementById('enquiryStatus');
-
-if (enquiryForm) {
-  enquiryForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('enquiryName').value.trim();
-    const email = document.getElementById('enquiryEmail').value.trim();
-    const phone = document.getElementById('enquiryPhone').value.trim();
-    const businessType = document.getElementById('enquiryBusinessType').value.trim();
-    const message = document.getElementById('enquiryMessage').value.trim();
-
-    const lead = {
-      name,
-      email,
-      phone,
-      businessType,
-      message,
-      createdAt: new Date().toISOString(),
-    };
-
-    leads.push(lead);
-    updateDashboard();
-
-    if (enquiryStatusEl) {
-      enquiryStatusEl.textContent = 'Lead captured. Opening WhatsApp and preparing Sheet link…';
-    }
-
-    console.log('Lead captured (frontend only):', lead);
-
-    const baseSheetURL = 'https://docs.google.com/spreadsheets/d/your-google-sheet-id/edit';
-
-    const waText = encodeURIComponent(
-      'New TaskOrbitt AI enquiry%0A%0A' +
-        'Name: ' + name + '%0A' +
-        'Email: ' + email + '%0A' +
-        'Phone: ' + phone + '%0A' +
-        'Business type: ' + businessType + '%0A' +
-        'Message: ' + (message || 'N/A') + '%0A%0A' +
-        'Suggested next line: "Sir, sales call nahi hai, ek quick question tha…"'
-    );
-
-    const waURL = 'https://wa.me/919654524339?text=' + waText;
-
-    setTimeout(() => {
-      window.open(baseSheetURL, '_blank');
-    }, 400);
-
-    setTimeout(() => {
-      window.open(waURL, '_blank');
-    }, 700);
-
-    enquiryForm.reset();
-  });
-}
+  <script src="script.js"></script>
+</body>
+</html>
