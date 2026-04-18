@@ -1005,7 +1005,8 @@
       <div class="container">
         <h2 class="section-title">About AI TaskOrbit</h2>
         <p class="section-subtitle">
-          AI TaskOrbit is built for founders and teams who treat every incoming call as a revenue event — not background noise. We combine advanced speech, intent understanding, and workflow automation into one always‑on voice layer for your business.
+          I TaskOrbit is a next-generation automation solutions company specializing in AI-powered voice agents and business process automation.
+We help businesses eliminate missed opportunities, reduce operational workload, and enhance customer experience through intelligent, human-like AI systems.iness.
         </p>
         <div class="grid grid-3">
           <article class="card scene-3d tilt-card">
@@ -1150,53 +1151,237 @@
     </section>
 
     <!-- HOW -->
-    <section id="how" class="section section-split">
-      <div class="container split-grid">
-        <div class="animate-in">
-          <h2 class="section-title">How TaskOrbit works in your business</h2>
-          <p class="section-subtitle">Simple for your callers. Powerful behind the scenes.</p>
-          <div class="flow">
-            <div class="flow-step">
-              <span class="flow-label">Step 1</span>
-              <p><strong>Caller dials your business number.</strong></p>
-            </div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">
-              <span class="flow-label">Step 2</span>
-              <p><strong>AI Voice Agent answers instantly</strong> with your brand greeting.</p>
-            </div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">
-              <span class="flow-label">Step 3</span>
-              <p><strong>Understands the request</strong> — sales, support, booking, information.</p>
-            </div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">
-              <span class="flow-label">Step 4</span>
-              <p><strong>Captures lead details</strong> and key questions automatically.</p>
-            </div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">
-              <span class="flow-label">Step 5</span>
-              <p><strong>Sends to WhatsApp/CRM</strong> or routes to your team to close.</p>
-            </div>
+    <!-- REPLACE your existing <section id="how"> ... </section> with this full block -->
+<section id="how" class="section section-split">
+  <!-- 3D FLOW CHART CSS (inline for this section) -->
+  <style>
+    /* 3D flow chart for "How TaskOrbitt works" */
+
+    .flow-3d {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 1.25rem;
+      position: relative;
+      perspective: 1200px;
+      perspective-origin: 50% 40%;
+    }
+
+    .flow-3d::before {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      top: 0.5rem;
+      bottom: 2rem;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        rgba(148, 163, 184, 0.1),
+        rgba(56, 189, 248, 0.65)
+      );
+      pointer-events: none;
+    }
+
+    /* Ek-ek step card */
+
+    .flow-step-3d {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.8rem;
+      align-items: center;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .flow-step-card {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: 1rem;
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      padding: 0.9rem 1rem;
+      box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.85),
+        0 0 0 1px rgba(15, 23, 42, 0.9);
+      transform: translateZ(22px) rotateX(-6deg) rotateY(6deg);
+      transition:
+        transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+        box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+        border-color 0.3s ease;
+    }
+
+    .flow-step-card p {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .flow-step-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #bfdbfe;
+      padding: 0.16rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.8);
+      margin-bottom: 0.35rem;
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    /* Arrow column */
+
+    .flow-step-arrow {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7dd3fc;
+      font-size: 1.1rem;
+      background: radial-gradient(
+        circle at 30% 30%,
+        rgba(56, 189, 248, 0.2),
+        transparent 55%
+      );
+      transform: translateZ(10px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+      position: relative;
+    }
+
+    .flow-step-arrow span {
+      display: block;
+      animation: arrow-pulse 1.6s ease-in-out infinite;
+    }
+
+    /* Hover 3D effect */
+
+    .flow-step-3d:hover .flow-step-card {
+      transform: translateZ(40px) rotateX(-4deg) rotateY(10deg) translateY(-4px);
+      box-shadow:
+        0 26px 70px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(56, 189, 248, 0.85);
+      border-color: rgba(56, 189, 248, 0.9);
+    }
+
+    /* Last step without arrow */
+
+    .flow-step-last .flow-step-arrow {
+      display: none;
+    }
+
+    /* Arrow glow animation */
+
+    @keyframes arrow-pulse {
+      0%,
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      50% {
+        transform: translateX(4px);
+        opacity: 0.7;
+      }
+    }
+
+    /* Desktop layout: horizontal steps */
+
+    @media (min-width: 960px) {
+      .flow-3d {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 1.4rem;
+      }
+
+      .flow-3d::before {
+        display: none;
+      }
+
+      .flow-step-3d {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .flow-step-arrow {
+        margin-top: 0.7rem;
+      }
+
+      .flow-step-last .flow-step-card {
+        transform: translateZ(26px) rotateX(-6deg) rotateY(0deg);
+      }
+    }
+  </style>
+
+  <div class="container split-grid">
+    <div class="animate-in">
+      <h2 class="section-title">How TaskOrbitt works in your business</h2>
+      <p class="section-subtitle">Simple for your callers. Powerful behind the scenes.</p>
+
+      <!-- 3D FLOW CHART START -->
+      <div class="flow-3d">
+        <div class="flow-step-3d">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 1</span>
+            <p><strong>Caller dials your business number.</strong></p>
+          </div>
+          <div class="flow-step-arrow">
+            <span>→</span>
           </div>
         </div>
-        <aside class="card scene-3d tilt-card animate-in animate-delay-1">
-          <div class="tilt-inner">
-            <h3>Where TaskOrbit fits</h3>
-            <ul class="list">
-              <li><strong>Real estate</strong> – capture and qualify property enquiries before competitors call back.</li>
-              <li><strong>Clinics</strong> – handle appointment booking and rescheduling without front desk overload.</li>
-              <li><strong>E‑commerce</strong> – answer delivery, order, and product questions automatically.</li>
-              <li><strong>Finance</strong> – qualify loan and investment leads with compliant scripts.</li>
-              <li><strong>Coaching institutes</strong> – manage admission, fee, and batch enquiries at scale.</li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
 
+        <div class="flow-step-3d">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 2</span>
+            <p><strong>AI Voice Agent answers instantly</strong> with your brand greeting.</p>
+          </div>
+          <div class="flow-step-arrow">
+            <span>→</span>
+          </div>
+        </div>
+
+        <div class="flow-step-3d">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 3</span>
+            <p><strong>Understands the request</strong> — sales, support, booking, information.</p>
+          </div>
+          <div class="flow-step-arrow">
+            <span>→</span>
+          </div>
+        </div>
+
+        <div class="flow-step-3d">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 4</span>
+            <p><strong>Captures lead details</strong> and key questions automatically.</p>
+          </div>
+          <div class="flow-step-arrow">
+            <span>→</span>
+          </div>
+        </div>
+
+        <div class="flow-step-3d flow-step-last">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 5</span>
+            <p><strong>Sends to WhatsApp/CRM</strong> or routes to your team to close.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 3D FLOW CHART END -->
+    </div>
+
+    <aside class="card scene-3d tilt-card animate-in animate-delay-1">
+      <div class="tilt-inner">
+        <h3>Where TaskOrbitt fits</h3>
+        <ul class="list">
+          <li><strong>Real estate</strong> – capture and qualify property enquiries before competitors call back.</li>
+          <li><strong>Clinics</strong> – handle appointment booking and rescheduling without front desk overload.</li>
+          <li><strong>E‑commerce</strong> – answer delivery, order, and product questions automatically.</li>
+          <li><strong>Finance</strong> – qualify loan and investment leads with compliant scripts.</li>
+          <li><strong>Coaching institutes</strong> – manage admission, fee, and batch enquiries at scale.</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
     <!-- PRICING -->
     <section id="pricing" class="section">
       <div class="container">
