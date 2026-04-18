@@ -1114,36 +1114,12 @@
       50%      { transform: translateX(4px); opacity: 0.7; }
     }
 
-    @media (min-width: 960px) {
-      .flow-3d {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 1.4rem;
-      }
-
-      .flow-3d::before {
-        display: none;
-      }
-
-      .flow-step-3d {
-        grid-template-columns: 1fr;
-        justify-items: center;
-      }
-
-      .flow-step-arrow {
-        margin-top: 0.7rem;
-      }
-
-      .flow-step-last .flow-step-card {
-        transform: translateZ(26px) rotateX(-6deg) rotateY(0deg);
-      }
-    }
-
-/* HOW section layout: flow chart upar, infographic niche */
+  /* HOW section layout: flow chart upar, infographic niche */
 
 .how-layout {
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
+  gap: 2.5rem;
 }
 
 .how-header {
@@ -1155,56 +1131,99 @@
   padding-bottom: 0.5rem;
 }
 
-/* Fits infographic – circular icon based, no images */
+/* Fits infographic – center hub + 5 circular icon bubbles */
 
 .fits-block {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
   align-items: center;
+  gap: 1.8rem;
 }
 
-.fits-subtitle {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  max-width: 36rem;
-  text-align: center;
+.fits-diagram {
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  aspect-ratio: 2.3 / 1; /* wide semi-arc layout */
 }
 
-.fits-circle-layout {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.4rem 2.3rem;
-  max-width: 50rem;
-}
+/* Center hub */
 
-/* Each industry item = circle icon + text */
-
-.fits-item {
+.fits-center {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 120px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(37, 99, 235, 0.8);
+  box-shadow:
+    0 20px 55px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.95);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.45rem;
-  width: 140px;
+  justify-content: center;
+  padding: 0.75rem 1rem;
   text-align: center;
 }
 
-.fits-icon-ring {
-  width: 64px;
-  height: 64px;
+.fits-center-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #9ca3af;
+  margin-bottom: 0.25rem;
+}
+
+.fits-center-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Bubbles around (top-left to top-right arc) */
+
+.fits-bubble {
+  position: absolute;
+  width: 170px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(30, 64, 175, 0.8);
+  box-shadow:
+    0 16px 45px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.95);
+  padding: 0.5rem 0.7rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.5rem;
+  align-items: center;
+}
+
+/* Positions (approx arc) */
+
+.fits-bubble-1 { top: 0%;   left: 4%;   }
+.fits-bubble-2 { top: 0%;   right: 4%;  }
+.fits-bubble-3 { top: 34%;  left: 0%;   }
+.fits-bubble-4 { top: 34%;  right: 0%;  }
+.fits-bubble-5 { bottom: 0%; left: 50%; transform: translateX(-50%); }
+
+/* Icon circle inside bubble */
+
+.fits-bubble-icon {
+  width: 30px;
+  height: 30px;
   border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: #f9fafb;
-  box-shadow:
-    0 14px 35px rgba(15, 23, 42, 0.9),
-    0 0 0 1px rgba(15, 23, 42, 0.95);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.9);
 }
 
-/* Different colors per industry – blue/teal/orange/purple tone */
+/* Color variants (blue/teal/orange/purple tone) */
 
 .fits-icon-realestate {
   background: radial-gradient(circle at 30% 30%, #38bdf8, #1d4ed8);
@@ -1226,30 +1245,46 @@
   background: radial-gradient(circle at 30% 30%, #a855f7, #7c3aed);
 }
 
-.fits-item-title {
-  font-size: 0.9rem;
+.fits-bubble-title {
+  font-size: 0.86rem;
   font-weight: 600;
 }
 
-.fits-item-text {
-  font-size: 0.8rem;
+.fits-bubble-text {
+  font-size: 0.78rem;
   color: #cbd5f5;
 }
 
-/* Mobile – thoda tight spacing */
+/* Subtitle below whole graphic */
+
+.fits-subtitle {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  max-width: 38rem;
+  text-align: center;
+}
+
+/* Mobile fallback – stack bubbles */
 
 @media (max-width: 768px) {
-  .fits-circle-layout {
-    gap: 1.1rem 1.6rem;
+  .fits-diagram {
+    position: static;
+    aspect-ratio: auto;
   }
-  .fits-item {
-    width: 120px;
+
+  .fits-center {
+    position: static;
+    transform: none;
+    margin: 0 auto 1rem;
   }
-  .fits-subtitle {
-    text-align: left;
+
+  .fits-bubble {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-bottom: 0.7rem;
   }
-}
-    
+}  
     /* Simple fade-up animation */
 
     @keyframes fade-up {
@@ -1612,56 +1647,72 @@
       </div>
     </div>
 
-       <!-- Niche: Where AI TaskOrbit fits – circular icon infographic -->
+          <!-- Niche: Where AI TaskOrbit fits – hub & spoke infographic -->
     <div class="fits-block animate-in animate-delay-2">
-      <h3 class="section-title" style="font-size:1.25rem;margin-bottom:0.15rem;text-align:center;">
-        Where AI TaskOrbit fits
-      </h3>
-      <p class="fits-subtitle">
-        High‑intent calls from different industries — captured, qualified, and handed to your team in one clean stream.
-      </p>
-
-      <div class="fits-circle-layout">
-        <div class="fits-item">
-          <div class="fits-icon-ring fits-icon-realestate">🏙️</div>
-          <p class="fits-item-title">Real estate</p>
-          <p class="fits-item-text">
-            Capture and qualify property enquiries before competitors call back.
-          </p>
+      <div class="fits-diagram">
+        <!-- center hub -->
+        <div class="fits-center">
+          <p class="fits-center-title">Where AI TaskOrbit fits</p>
+          <p class="fits-center-text">High‑intent inbound calls</p>
         </div>
 
-        <div class="fits-item">
-          <div class="fits-icon-ring fits-icon-clinics">🏥</div>
-          <p class="fits-item-title">Clinics</p>
-          <p class="fits-item-text">
-            Handle appointment booking and rescheduling without front desk overload.
-          </p>
+        <!-- bubbles around -->
+
+        <div class="fits-bubble fits-bubble-1">
+          <div class="fits-bubble-icon fits-icon-realestate">🏙️</div>
+          <div>
+            <p class="fits-bubble-title">Real estate</p>
+            <p class="fits-bubble-text">
+              Capture and qualify property enquiries before competitors call back.
+            </p>
+          </div>
         </div>
 
-        <div class="fits-item">
-          <div class="fits-icon-ring fits-icon-ecom">🛒</div>
-          <p class="fits-item-title">E‑commerce</p>
-          <p class="fits-item-text">
-            Answer delivery, order, and product questions automatically.
-          </p>
+        <div class="fits-bubble fits-bubble-2">
+          <div class="fits-bubble-icon fits-icon-clinics">🏥</div>
+          <div>
+            <p class="fits-bubble-title">Clinics</p>
+            <p class="fits-bubble-text">
+              Handle appointment booking and rescheduling without front desk overload.
+            </p>
+          </div>
         </div>
 
-        <div class="fits-item">
-          <div class="fits-icon-ring fits-icon-finance">💳</div>
-          <p class="fits-item-title">Finance</p>
-          <p class="fits-item-text">
-            Qualify loan and investment leads with compliant scripts.
-          </p>
+        <div class="fits-bubble fits-bubble-3">
+          <div class="fits-bubble-icon fits-icon-ecom">🛒</div>
+          <div>
+            <p class="fits-bubble-title">E‑commerce</p>
+            <p class="fits-bubble-text">
+              Answer delivery, order, and product questions automatically.
+            </p>
+          </div>
         </div>
 
-        <div class="fits-item">
-          <div class="fits-icon-ring fits-icon-coaching">🎓</div>
-          <p class="fits-item-title">Coaching institutes</p>
-          <p class="fits-item-text">
-            Manage admission, fee, and batch enquiries at scale.
-          </p>
+        <div class="fits-bubble fits-bubble-4">
+          <div class="fits-bubble-icon fits-icon-finance">💳</div>
+          <div>
+            <p class="fits-bubble-title">Finance</p>
+            <p class="fits-bubble-text">
+              Qualify loan and investment leads with compliant scripts.
+            </p>
+          </div>
+        </div>
+
+        <div class="fits-bubble fits-bubble-5">
+          <div class="fits-bubble-icon fits-icon-coaching">🎓</div>
+          <div>
+            <p class="fits-bubble-title">Coaching institutes</p>
+            <p class="fits-bubble-text">
+              Manage admission, fee, and batch enquiries at scale.
+            </p>
+          </div>
         </div>
       </div>
+
+      <p class="fits-subtitle">
+        High‑intent calls from all these industries are captured, qualified, and handed to your team
+        in one clean stream by AI TaskOrbit.
+      </p>
     </div>
     <!-- PRICING -->
     <section id="pricing" class="section">
