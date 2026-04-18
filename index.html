@@ -1155,89 +1155,98 @@
   padding-bottom: 0.5rem;
 }
 
-/* Fits infographic – professional chips, no images */
+/* Fits infographic – circular icon based, no images */
 
 .fits-block {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem;
+  align-items: center;
 }
 
 .fits-subtitle {
   font-size: 0.85rem;
   color: #9ca3af;
-  margin-bottom: 0.4rem;
+  max-width: 36rem;
+  text-align: center;
 }
 
-.fits-grid {
-  display: grid;
-  gap: 0.9rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.fits-circle-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.4rem 2.3rem;
+  max-width: 50rem;
 }
 
-.fit-card {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  column-gap: 0.7rem;
-  align-items: flex-start;
-  padding: 0.85rem 1rem;
-  border-radius: 1rem;
-  background: rgba(15, 23, 42, 0.96);
-  border: 1px solid rgba(30, 64, 175, 0.7);
-  box-shadow:
-    0 18px 45px rgba(15, 23, 42, 0.85),
-    0 0 0 1px rgba(15, 23, 42, 0.95);
+/* Each industry item = circle icon + text */
+
+.fits-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  width: 140px;
+  text-align: center;
 }
 
-.fit-icon-pill {
-  width: 28px;
-  height: 28px;
+.fits-icon-ring {
+  width: 64px;
+  height: 64px;
   border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
-  color: #e5e7eb;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.9);
+  font-size: 1.4rem;
+  color: #f9fafb;
+  box-shadow:
+    0 14px 35px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(15, 23, 42, 0.95);
 }
 
-/* Different colors per industry – website ke blue/teal tone me */
+/* Different colors per industry – blue/teal/orange/purple tone */
 
-.fit-icon-realestate {
+.fits-icon-realestate {
   background: radial-gradient(circle at 30% 30%, #38bdf8, #1d4ed8);
 }
 
-.fit-icon-clinic {
+.fits-icon-clinics {
   background: radial-gradient(circle at 30% 30%, #34d399, #047857);
 }
 
-.fit-icon-ecom {
-  background: radial-gradient(circle at 30% 30%, #f97316, #ea580c);
+.fits-icon-ecom {
+  background: radial-gradient(circle at 30% 30%, #fb923c, #ea580c);
 }
 
-.fit-icon-finance {
-  background: radial-gradient(circle at 30% 30%, #22c55e, #16a34a);
+.fits-icon-finance {
+  background: radial-gradient(circle at 30% 30%, #22c55e, #15803d);
 }
 
-.fit-icon-coaching {
+.fits-icon-coaching {
   background: radial-gradient(circle at 30% 30%, #a855f7, #7c3aed);
 }
 
-.fit-title {
-  font-size: 0.92rem;
+.fits-item-title {
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
-.fit-text {
-  font-size: 0.85rem;
+.fits-item-text {
+  font-size: 0.8rem;
   color: #cbd5f5;
 }
 
-/* Mobile tweaks */
+/* Mobile – thoda tight spacing */
 
 @media (max-width: 768px) {
-  .fits-grid {
-    grid-template-columns: minmax(0, 1fr);
+  .fits-circle-layout {
+    gap: 1.1rem 1.6rem;
+  }
+  .fits-item {
+    width: 120px;
+  }
+  .fits-subtitle {
+    text-align: left;
   }
 }
     
@@ -1603,69 +1612,57 @@
       </div>
     </div>
 
-    <!-- Niche: Where AI TaskOrbit fits – infographic chips, no images -->
+       <!-- Niche: Where AI TaskOrbit fits – circular icon infographic -->
     <div class="fits-block animate-in animate-delay-2">
-      <h3 class="section-title" style="font-size:1.25rem;margin-bottom:0.15rem;">
+      <h3 class="section-title" style="font-size:1.25rem;margin-bottom:0.15rem;text-align:center;">
         Where AI TaskOrbit fits
       </h3>
       <p class="fits-subtitle">
         High‑intent calls from different industries — captured, qualified, and handed to your team in one clean stream.
       </p>
 
-      <div class="fits-grid">
-        <div class="fit-card">
-          <div class="fit-icon-pill fit-icon-realestate">🏙️</div>
-          <div>
-            <p class="fit-title">Real estate</p>
-            <p class="fit-text">
-              Capture and qualify property enquiries before competitors call back.
-            </p>
-          </div>
+      <div class="fits-circle-layout">
+        <div class="fits-item">
+          <div class="fits-icon-ring fits-icon-realestate">🏙️</div>
+          <p class="fits-item-title">Real estate</p>
+          <p class="fits-item-text">
+            Capture and qualify property enquiries before competitors call back.
+          </p>
         </div>
 
-        <div class="fit-card">
-          <div class="fit-icon-pill fit-icon-clinic">🏥</div>
-          <div>
-            <p class="fit-title">Clinics</p>
-            <p class="fit-text">
-              Handle appointment booking and rescheduling without front desk overload.
-            </p>
-          </div>
+        <div class="fits-item">
+          <div class="fits-icon-ring fits-icon-clinics">🏥</div>
+          <p class="fits-item-title">Clinics</p>
+          <p class="fits-item-text">
+            Handle appointment booking and rescheduling without front desk overload.
+          </p>
         </div>
 
-        <div class="fit-card">
-          <div class="fit-icon-pill fit-icon-ecom">🛒</div>
-          <div>
-            <p class="fit-title">E‑commerce</p>
-            <p class="fit-text">
-              Answer delivery, order, and product questions automatically.
-            </p>
-          </div>
+        <div class="fits-item">
+          <div class="fits-icon-ring fits-icon-ecom">🛒</div>
+          <p class="fits-item-title">E‑commerce</p>
+          <p class="fits-item-text">
+            Answer delivery, order, and product questions automatically.
+          </p>
         </div>
 
-        <div class="fit-card">
-          <div class="fit-icon-pill fit-icon-finance">💳</div>
-          <div>
-            <p class="fit-title">Finance</p>
-            <p class="fit-text">
-              Qualify loan and investment leads with compliant scripts.
-            </p>
-          </div>
+        <div class="fits-item">
+          <div class="fits-icon-ring fits-icon-finance">💳</div>
+          <p class="fits-item-title">Finance</p>
+          <p class="fits-item-text">
+            Qualify loan and investment leads with compliant scripts.
+          </p>
         </div>
 
-        <div class="fit-card">
-          <div class="fit-icon-pill fit-icon-coaching">🎓</div>
-          <div>
-            <p class="fit-title">Coaching institutes</p>
-            <p class="fit-text">
-              Manage admission, fee, and batch enquiries at scale.
-            </p>
-          </div>
+        <div class="fits-item">
+          <div class="fits-icon-ring fits-icon-coaching">🎓</div>
+          <p class="fits-item-title">Coaching institutes</p>
+          <p class="fits-item-text">
+            Manage admission, fee, and batch enquiries at scale.
+          </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
     <!-- PRICING -->
     <section id="pricing" class="section">
       <div class="container">
