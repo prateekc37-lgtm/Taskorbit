@@ -24,8 +24,8 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #050816;
-      color: #f9fafb;
+      background: radial-gradient(circle at top, #0b1220 0, #020617 45%, #020617 100%);
+      color: #e5e7eb;
       line-height: 1.6;
     }
 
@@ -68,7 +68,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(18px);
-      background: rgba(5, 8, 22, 0.88);
+      background: rgba(15, 23, 42, 0.88);
       border-bottom: 1px solid rgba(148, 163, 184, 0.25);
     }
 
@@ -91,16 +91,18 @@
       width: 32px;
       height: 32px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #a855f7, #1d4ed8, #0f172a);
+      background: conic-gradient(from 200deg, #0ea5e9, #6366f1, #22c55e, #0ea5e9);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
+      animation: logo-spin 8s linear infinite;
     }
 
     .logo-dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 999px;
       background: #f9fafb;
       box-shadow: 0 0 12px rgba(248, 250, 252, 0.9);
@@ -135,16 +137,17 @@
       padding: 0.5rem 0.75rem;
       border-radius: 999px;
       cursor: pointer;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
     }
 
     .nav-link:hover {
-      background: rgba(148, 163, 184, 0.15);
+      background: rgba(148, 163, 184, 0.18);
+      transform: translateY(-1px);
     }
 
     .nav-link-pill {
-      border: 1px solid rgba(96, 165, 250, 0.6);
-      color: #bfdbfe;
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      color: #bae6fd;
     }
 
     .btn {
@@ -154,21 +157,21 @@
       font-size: 0.95rem;
       font-weight: 500;
       cursor: pointer;
-      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
       color: #f9fafb;
       box-shadow:
-        0 12px 35px rgba(59, 130, 246, 0.45),
+        0 18px 50px rgba(37, 99, 235, 0.45),
         0 0 0 1px rgba(148, 163, 184, 0.4);
       transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease,
-        background 0.15s ease;
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
     }
 
     .btn:hover {
-      transform: translateY(-1px);
+      transform: translateY(-2px) translateZ(5px);
       box-shadow:
-        0 16px 45px rgba(59, 130, 246, 0.55),
+        0 25px 60px rgba(37, 99, 235, 0.6),
         0 0 0 1px rgba(148, 163, 184, 0.5);
     }
 
@@ -180,7 +183,8 @@
     }
 
     .btn-outline:hover {
-      background: rgba(148, 163, 184, 0.15);
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(56, 189, 248, 0.8);
     }
 
     .btn-sm {
@@ -222,19 +226,22 @@
       font-size: 0.85rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #9ca3af;
+      color: #94a3b8;
       margin-bottom: 0.75rem;
     }
 
     .hero-title {
-      font-size: 2.8rem;
+      font-size: 2.9rem;
       line-height: 1.1;
       font-weight: 800;
       margin-bottom: 1rem;
+      background: linear-gradient(135deg, #e5e7eb, #a5b4fc);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     .hero-subtitle {
-      color: #d1d5db;
+      color: #cbd5f5;
       margin-bottom: 1.5rem;
     }
 
@@ -251,7 +258,7 @@
       gap: 0.45rem;
       padding: 0.35rem 0.7rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(148, 163, 184, 0.4);
       font-size: 0.9rem;
     }
@@ -273,16 +280,23 @@
 
     .hero-footnote {
       font-size: 0.9rem;
-      color: #9ca3af;
+      color: #94a3b8;
     }
 
     .hero-panel {
-      background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.22), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.16), transparent 60%),
-                  rgba(15, 23, 42, 0.95);
-      border-radius: 1.25rem;
-      padding: 1.5rem 1.4rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.2), transparent 60%),
+        rgba(15, 23, 42, 0.98);
+      border-radius: 1.5rem;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(15, 23, 42, 1);
+      animation: float-card 6s ease-in-out infinite;
     }
 
     .hero-metric-row {
@@ -296,7 +310,7 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: #9ca3af;
+      color: #94a3b8;
     }
 
     .metric-main {
@@ -330,10 +344,10 @@
     }
 
     .hero-math {
-      border-radius: 1rem;
+      border-radius: 1.1rem;
       padding: 1rem 1.1rem;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px dashed rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px dashed rgba(148, 163, 184, 0.65);
     }
 
     .math-row {
@@ -423,10 +437,11 @@
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.96);
-      border-radius: 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: 1.1rem;
+      border: 1px solid rgba(30, 64, 175, 0.55);
       padding: 1.3rem 1.3rem;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.75);
     }
 
     .roi-icon {
@@ -450,8 +465,10 @@
     }
 
     .pricing-card-featured {
-      border-color: rgba(59, 130, 246, 0.8);
-      box-shadow: 0 17px 55px rgba(37, 99, 235, 0.35);
+      border-color: rgba(56, 189, 248, 0.9);
+      box-shadow:
+        0 24px 70px rgba(37, 99, 235, 0.55),
+        0 0 0 1px rgba(37, 99, 235, 0.8);
     }
 
     .plan-badge {
@@ -461,11 +478,12 @@
       transform: translateX(-50%);
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid rgba(59, 130, 246, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.9);
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      background: rgba(15, 23, 42, 0.96);
+      background: rgba(15, 23, 42, 0.98);
+      color: #ccfbf1;
     }
 
     .plan-name {
@@ -540,7 +558,7 @@
     }
 
     .contact-meta a {
-      color: #93c5fd;
+      color: #7dd3fc;
       text-decoration: none;
     }
 
@@ -580,7 +598,7 @@
     .form-field textarea {
       border-radius: 0.7rem;
       border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.96);
+      background: rgba(15, 23, 42, 0.98);
       padding: 0.55rem 0.7rem;
       font-size: 0.9rem;
       color: #e5e7eb;
@@ -589,8 +607,8 @@
     .form-field input:focus,
     .form-field textarea:focus {
       outline: none;
-      border-color: #60a5fa;
-      box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.7);
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.7);
     }
 
     .form-footer {
@@ -694,39 +712,82 @@
       box-shadow: 0 12px 35px rgba(22, 163, 74, 0.6);
     }
 
-    /* === CSS-only 3D card / tilt === */
+    /* === CSS-only 3D card / tilt with animation === */
 
     .scene-3d {
-      perspective: 1000px;
+      perspective: 1100px;
       perspective-origin: center center;
     }
 
     .tilt-card {
       transform-style: preserve-3d;
       transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.8);
+        transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+        box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+        border-color 0.3s ease;
     }
 
     .tilt-card .tilt-inner {
-      transform: translateZ(20px);
+      transform: translateZ(24px);
     }
 
     .tilt-card:hover {
-      transform: rotateX(-6deg) rotateY(6deg) translateY(-4px);
+      transform: rotateX(-10deg) rotateY(10deg) translateY(-6px);
       box-shadow:
-        0 22px 55px rgba(15, 23, 42, 0.95),
-        0 0 0 1px rgba(148, 163, 184, 0.75);
+        0 26px 70px rgba(15, 23, 42, 0.95),
+        0 0 0 1px rgba(56, 189, 248, 0.7);
+      border-color: rgba(56, 189, 248, 0.8);
     }
 
     .hero-panel .hero-metric-row {
-      transform: translateZ(26px);
+      transform: translateZ(30px);
     }
 
     .hero-panel .hero-math {
-      transform: translateZ(14px);
+      transform: translateZ(16px);
     }
+
+    /* Animations */
+
+    @keyframes float-card {
+      0% {
+        transform: translateY(0) rotateX(-2deg) rotateY(2deg);
+      }
+      50% {
+        transform: translateY(-10px) rotateX(-4deg) rotateY(4deg);
+      }
+      100% {
+        transform: translateY(0) rotateX(-2deg) rotateY(2deg);
+      }
+    }
+
+    @keyframes logo-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fade-up 0.7s ease forwards;
+    }
+
+    .animate-delay-1 { animation-delay: 0.15s; }
+    .animate-delay-2 { animation-delay: 0.3s; }
+    .animate-delay-3 { animation-delay: 0.45s; }
+
+    /* Responsive */
 
     @media (max-width: 960px) {
       .hero-grid {
@@ -815,7 +876,7 @@
     <!-- HERO -->
     <section id="hero" class="section hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy animate-in">
           <p class="eyebrow">AI Voice Agents for serious businesses</p>
           <h1 class="hero-title">Never Miss a Customer Call Again</h1>
           <p class="hero-subtitle">
@@ -835,7 +896,7 @@
           </p>
         </div>
 
-        <aside class="hero-panel scene-3d tilt-card" aria-label="Impact snapshot">
+        <aside class="hero-panel scene-3d tilt-card animate-in animate-delay-1" aria-label="Impact snapshot">
           <div class="tilt-inner">
             <div class="hero-metric-row">
               <div>
@@ -868,7 +929,7 @@
     <!-- WHY -->
     <section id="why" class="section section-split">
       <div class="container split-grid">
-        <div>
+        <div class="animate-in">
           <h2 class="section-title">Why businesses need AI Voice Agents now</h2>
           <p class="section-subtitle">
             The problem isn’t lack of demand. It’s how many revenue opportunities die before anyone from your team can say “hello”.
@@ -881,7 +942,7 @@
             <li><span>Slow response kills intent — leads move on to faster competitors.</span></li>
           </ul>
         </div>
-        <div>
+        <div class="animate-in animate-delay-1">
           <div class="pill">How TaskOrbitt fixes it</div>
           <ul class="list list-icon list-success">
             <li><span>AI answers every call instantly, within a second of the first ring.</span></li>
@@ -904,28 +965,28 @@
           TaskOrbitt AI pays for itself quickly by saving you on staffing, capturing more leads, and keeping your business always-on.
         </p>
         <div class="grid grid-4 roi-grid">
-          <article class="card roi-card scene-3d tilt-card">
+          <article class="card roi-card scene-3d tilt-card animate-in">
             <div class="tilt-inner">
               <div class="roi-icon">💰</div>
               <h3>Cost saving</h3>
               <p>Save up to <strong>70–80% on call center and reception costs</strong> by automating routine inbound calls.</p>
             </div>
           </article>
-          <article class="card roi-card scene-3d tilt-card">
+          <article class="card roi-card scene-3d tilt-card animate-in animate-delay-1">
             <div class="tilt-inner">
               <div class="roi-icon">📈</div>
               <h3>Revenue increase</h3>
               <p><strong>Increase lead conversion by up to 3×</strong> by answering every call and following up instantly.</p>
             </div>
           </article>
-          <article class="card roi-card scene-3d tilt-card">
+          <article class="card roi-card scene-3d tilt-card animate-in animate-delay-2">
             <div class="tilt-inner">
               <div class="roi-icon">⏱</div>
               <h3>Time saving</h3>
               <p><strong>Automate 100% of inbound calls</strong> so your team focuses on closing deals, not chasing ring tones.</p>
             </div>
           </article>
-          <article class="card roi-card scene-3d tilt-card">
+          <article class="card roi-card scene-3d tilt-card animate-in animate-delay-3">
             <div class="tilt-inner">
               <div class="roi-icon">🌍</div>
               <h3>24/7 availability</h3>
@@ -944,25 +1005,440 @@
           More than a bot — TaskOrbitt is your always-on, always-learning frontline for inbound calls.
         </p>
         <div class="grid grid-3 feature-grid">
-          <article class="card feature-card scene-3d tilt-card">
+          <article class="card feature-card scene-3d tilt-card animate-in">
             <div class="tilt-inner">
               <h3>AI call automation</h3>
               <p>Answer, route, and resolve inbound calls automatically with smart workflows tuned to your business.</p>
             </div>
           </article>
-          <article class="card feature-card scene-3d tilt-card">
+          <article class="card feature-card scene-3d tilt-card animate-in animate-delay-1">
             <div class="tilt-inner">
               <h3>Human-like conversations</h3>
               <p>Natural, context-aware voice that understands intent, asks follow‑ups, and keeps callers engaged.</p>
             </div>
           </article>
-          <article class="card feature-card scene-3d tilt-card">
+          <article class="card feature-card scene-3d tilt-card animate-in animate-delay-2">
             <div class="tilt-inner">
               <h3>Lead capture system</h3>
               <p>Capture name, contact, intent, and next steps on every call — no more lost sticky notes or half-logged CRMs.</p>
             </div>
           </article>
-          <article class="card feature-card scene-3d tilt-card">
+          <article class="card feature-card scene-3d tilt-card animate-in">
             <div class="tilt-inner">
               <h3>CRM &amp; WhatsApp integration</h3>
-              <p>Push qualified leads 
+              <p>Push qualified leads into your CRM and sales WhatsApp instantly so your team can act fast.</p>
+            </div>
+          </article>
+          <article class="card feature-card scene-3d tilt-card animate-in animate-delay-1">
+            <div class="tilt-inner">
+              <h3>Multi-language support</h3>
+              <p>Serve customers in multiple languages and accents to match your markets and regions.</p>
+            </div>
+          </article>
+          <article class="card feature-card scene-3d tilt-card animate-in animate-delay-2">
+            <div class="tilt-inner">
+              <h3>Smart call routing</h3>
+              <p>Route VIPs and hot leads to the right people while AI handles FAQs and low-value calls.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="section section-split">
+      <div class="container split-grid">
+        <div class="animate-in">
+          <h2 class="section-title">How TaskOrbitt works in your business</h2>
+          <p class="section-subtitle">Simple for your callers. Powerful behind the scenes.</p>
+          <div class="flow">
+            <div class="flow-step">
+              <span class="flow-label">Step 1</span>
+              <p><strong>Caller dials your business number.</strong></p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="flow-label">Step 2</span>
+              <p><strong>AI Voice Agent answers instantly</strong> with your brand greeting.</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="flow-label">Step 3</span>
+              <p><strong>Understands the request</strong> — sales, support, booking, information.</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="flow-label">Step 4</span>
+              <p><strong>Captures lead details</strong> and key questions automatically.</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="flow-label">Step 5</span>
+              <p><strong>Sends to WhatsApp/CRM</strong> or routes to your team to close.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="card usecase-card scene-3d tilt-card animate-in animate-delay-1">
+          <div class="tilt-inner">
+            <h3>Where TaskOrbitt fits</h3>
+            <ul class="list">
+              <li><strong>Real estate</strong> – capture and qualify property enquiries before competitors call back.</li>
+              <li><strong>Clinics</strong> – handle appointment booking and rescheduling without front desk overload.</li>
+              <li><strong>E‑commerce</strong> – answer delivery, order, and product questions automatically.</li>
+              <li><strong>Finance</strong> – qualify loan and investment leads with compliant scripts.</li>
+              <li><strong>Coaching institutes</strong> – manage admission, fee, and batch enquiries at scale.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2 class="section-title center">Pricing that scales with your growth</h2>
+        <p class="section-subtitle center">
+          Start small, prove ROI, and grow into full coverage across teams and locations.
+        </p>
+        <div class="grid grid-3 pricing-grid">
+          <article class="card pricing-card scene-3d tilt-card animate-in">
+            <div class="tilt-inner">
+              <p class="plan-name">Starter</p>
+              <p class="plan-price">$19<span>/month</span></p>
+              <p class="plan-tagline">For solo founders and small teams just starting with AI calls.</p>
+              <ul class="plan-list">
+                <li>Up to 500 calls / month</li>
+                <li>Single number</li>
+                <li>Basic lead capture</li>
+              </ul>
+              <button class="btn btn-outline plan-cta" data-scroll="#contact">Start with Starter</button>
+            </div>
+          </article>
+
+          <article class="card pricing-card pricing-card-featured scene-3d tilt-card animate-in animate-delay-1">
+            <div class="tilt-inner">
+              <div class="plan-badge">Best for growing businesses</div>
+              <p class="plan-name">Growth</p>
+              <p class="plan-price">$49<span>/month</span></p>
+              <p class="plan-tagline">For teams that want serious coverage and measurable ROI.</p>
+              <ul class="plan-list">
+                <li>Up to 3,000 calls / month</li>
+                <li>Multiple numbers &amp; teams</li>
+                <li>CRM &amp; WhatsApp integration</li>
+                <li>Advanced reporting</li>
+              </ul>
+              <button class="btn plan-cta" data-scroll="#contact">Choose Growth</button>
+            </div>
+          </article>
+
+          <article class="card pricing-card scene-3d tilt-card animate-in animate-delay-2">
+            <div class="tilt-inner">
+              <p class="plan-name">Enterprise</p>
+              <p class="plan-price">Custom</p>
+              <p class="plan-tagline">For serious businesses that can’t afford missed revenue.</p>
+              <ul class="plan-list">
+                <li>Unlimited calls &amp; numbers</li>
+                <li>Custom SLAs &amp; onboarding</li>
+                <li>Private deployment options</li>
+                <li>Dedicated success team</li>
+              </ul>
+              <button class="btn btn-outline plan-cta" data-scroll="#contact">Talk to sales</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2 class="section-title center">What customers see in their numbers</h2>
+        <p class="section-subtitle center">
+          Real business impact from answering every call and capturing every lead.
+        </p>
+        <div class="grid grid-3 testimonial-grid">
+          <article class="card testimonial-card scene-3d tilt-card animate-in">
+            <div class="tilt-inner">
+              <p class="quote">
+                “TaskOrbitt increased our sales by roughly <strong>40%</strong> in 2 months. We simply stopped losing hot leads to voicemail.”
+              </p>
+              <p class="author">Founder, real estate agency</p>
+            </div>
+          </article>
+
+          <article class="card testimonial-card scene-3d tilt-card animate-in animate-delay-1">
+            <div class="tilt-inner">
+              <p class="quote">
+                “We reduced support cost by about <strong>60%</strong> while improving response times. AI now handles all first‑line calls.”
+              </p>
+              <p class="author">COO, e‑commerce brand</p>
+            </div>
+          </article>
+
+          <article class="card testimonial-card scene-3d tilt-card animate-in animate-delay-2">
+            <div class="tilt-inner">
+              <p class="quote">
+                “We basically never miss a customer call now. Nights and weekends generate leads instead of silence.”
+              </p>
+              <p class="author">Owner, multi‑location clinic group</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container split-grid">
+        <div class="animate-in">
+          <h2 class="section-title">Let’s see what TaskOrbitt can do for your calls</h2>
+          <p class="section-subtitle">
+            Tell us a bit about your business. We’ll share a short demo plus a concrete plan to recover missed revenue.
+          </p>
+          <div class="contact-highlights">
+            <div class="contact-pill">No long forms</div>
+            <div class="contact-pill">No obligation</div>
+            <div class="contact-pill">Outcome-focused demo</div>
+          </div>
+          <div class="contact-meta">
+            <p>Email: <a href="mailto:taskorbitt@gmail.com">taskorbitt@gmail.com</a></p>
+            <p>WhatsApp:
+              <a href="https://wa.me/919654524339" target="_blank" rel="noopener noreferrer">+91 96545 24339</a>
+            </p>
+          </div>
+        </div>
+        <div class="animate-in animate-delay-1">
+          <form id="enquiryForm" class="card form-card scene-3d tilt-card">
+            <div class="tilt-inner">
+              <h3 class="form-title">Enquiry form</h3>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="enquiryName">Name</label>
+                  <input id="enquiryName" name="name" type="text" required placeholder="Your full name" />
+                </div>
+                <div class="form-field">
+                  <label for="enquiryEmail">Email</label>
+                  <input id="enquiryEmail" name="email" type="email" required placeholder="you@company.com" />
+                </div>
+                <div class="form-field">
+                  <label for="enquiryPhone">Phone</label>
+                  <input id="enquiryPhone" name="phone" type="tel" required placeholder="Your phone / WhatsApp" />
+                </div>
+                <div class="form-field">
+                  <label for="enquiryBusinessType">Business type</label>
+                  <input id="enquiryBusinessType" name="businessType" type="text" required placeholder="Clinic, real estate, e‑commerce…" />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="enquiryMessage">What’s happening with your calls today?</label>
+                <textarea id="enquiryMessage" name="message" rows="3" placeholder="Example: We miss inquiries in the evening / can’t answer all marketing calls…"></textarea>
+              </div>
+              <div class="form-footer">
+                <p id="enquiryStatus" class="form-status">
+                  We’ll respond with a demo link + ROI breakdown for your business.
+                </p>
+                <button type="submit" class="btn">Get free demo</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN -->
+    <section id="admin" class="section">
+      <div class="container">
+        <h2 class="section-title">Lead overview (demo admin dashboard)</h2>
+        <p class="section-subtitle">
+          TaskOrbitt AI plugs into your systems so you can see every call, every lead, and every opportunity in one place.
+        </p>
+        <div class="grid grid-3 admin-metrics">
+          <article class="card metric-card scene-3d tilt-card animate-in">
+            <div class="tilt-inner">
+              <p class="metric-label">Total leads captured</p>
+              <p class="metric-main" id="totalLeads">0</p>
+              <p class="metric-sub">From website forms and AI calls.</p>
+            </div>
+          </article>
+          <article class="card metric-card scene-3d tilt-card animate-in animate-delay-1">
+            <div class="tilt-inner">
+              <p class="metric-label">Today’s leads</p>
+              <p class="metric-main" id="todayLeads">0</p>
+              <p class="metric-sub">New inquiries captured today.</p>
+            </div>
+          </article>
+          <article class="card metric-card scene-3d tilt-card animate-in animate-delay-2">
+            <div class="tilt-inner">
+              <p class="metric-label">Top business type</p>
+              <p class="metric-main" id="topBusinessType">—</p>
+              <p class="metric-sub">Where AI is seeing the most demand.</p>
+            </div>
+          </article>
+        </div>
+        <div class="card admin-table-card animate-in animate-delay-3">
+          <div class="admin-table-header">
+            <h3>Leads</h3>
+            <p class="admin-table-sub">
+              This demo dashboard shows leads from your enquiry form in real time. In production, TaskOrbitt connects to your CRM.
+            </p>
+          </div>
+          <div class="table-wrapper">
+            <table class="table" aria-label="Lead list">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Business type</th>
+                  <th>Phone</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                </tr>
+              </thead>
+              <tbody id="leadTableBody">
+                <tr class="empty-row">
+                  <td colspan="5">No leads yet. Submit the enquiry form to see leads appear here.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> TaskOrbitt AI. All rights reserved.</p>
+      <p>Built for teams who care about every customer call.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-fab" href="https://wa.me/919654524339?text=Hi%2C%20I%20want%20AI%20Voice%20Agent%20for%20my%20business" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span>➤</span>
+  </a>
+
+  <script>
+    // Smooth scroll
+    (function () {
+      const scrollButtons = document.querySelectorAll("[data-scroll]");
+      scrollButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const target = btn.getAttribute("data-scroll");
+          if (!target) return;
+          const el = document.querySelector(target);
+          if (!el) return;
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    })();
+
+    // Mobile nav toggle
+    (function () {
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".nav");
+      if (!toggle || !nav) return;
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("nav-open");
+        toggle.classList.toggle("nav-open");
+      });
+    })();
+
+    // Footer year
+    (function () {
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    })();
+
+    // Live revenue estimate (static calc)
+    (function () {
+      const liveEl = document.getElementById("liveRevenue");
+      if (!liveEl) return;
+      const MISSED_CALLS_PER_DAY = 5;
+      const VALUE_PER_CUSTOMER = 1000;
+      const DAYS_PER_MONTH = 30;
+      const lost = MISSED_CALLS_PER_DAY * VALUE_PER_CUSTOMER * DAYS_PER_MONTH;
+      const formatter = new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR",
+        maximumFractionDigits: 0
+      });
+      liveEl.textContent = formatter.format(lost);
+    })();
+
+    // Enquiry form → simple table + counters
+    (function () {
+      const form = document.getElementById("enquiryForm");
+      if (!form) return;
+
+      const statusEl = document.getElementById("enquiryStatus");
+      const totalLeadsEl = document.getElementById("totalLeads");
+      const todayLeadsEl = document.getElementById("todayLeads");
+      const topBusinessTypeEl = document.getElementById("topBusinessType");
+      const tableBody = document.getElementById("leadTableBody");
+
+      const leads = [];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const name = (formData.get("name") || "").toString().trim() || "Unknown";
+        const email = (formData.get("email") || "").toString().trim();
+        const phone = (formData.get("phone") || "").toString().trim();
+        const businessType = (formData.get("businessType") || "").toString().trim() || "Other";
+        const message = (formData.get("message") || "").toString().trim();
+
+        const lead = {
+          name,
+          email,
+          phone,
+          businessType,
+          message,
+          status: "New",
+          createdAt: new Date()
+        };
+
+        leads.unshift(lead);
+
+        const total = leads.length;
+        if (totalLeadsEl) totalLeadsEl.textContent = total.toString();
+
+        const today = new Date().toDateString();
+        const todayCount = leads.filter((l) => l.createdAt.toDateString() === today).length;
+        if (todayLeadsEl) todayLeadsEl.textContent = todayCount.toString();
+
+        const byType = leads.reduce((acc, l) => {
+          acc[l.businessType] = (acc[l.businessType] || 0) + 1;
+          return acc;
+        }, {});
+        const topType = Object.entries(byType).sort((a, b) => b[1] - a[1])[0]?.[0] || "—";
+        if (topBusinessTypeEl) topBusinessTypeEl.textContent = topType;
+
+        if (tableBody) {
+          tableBody.innerHTML = "";
+          leads.forEach((l) => {
+            const tr = document.createElement("tr");
+            const created = l.createdAt.toLocaleString();
+            tr.innerHTML = `
+              <td>${l.name}</td>
+              <td>${l.businessType}</td>
+              <td>${l.phone}</td>
+              <td>${l.status}</td>
+              <td>${created}</td>
+            `;
+            tableBody.appendChild(tr);
+          });
+        }
+
+        if (statusEl) {
+          statusEl.textContent = "Thanks! We’ll share your demo and ROI breakdown shortly.";
+        }
+
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
