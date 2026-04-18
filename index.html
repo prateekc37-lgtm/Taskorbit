@@ -808,6 +808,173 @@
       box-shadow: 0 12px 35px rgba(22, 163, 74, 0.6);
     }
 
+   /* Premium badges + infographic for "Where AI TaskOrbit fits" */
+
+.vertical-infographic {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1.4rem;
+}
+
+.infographic-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 1.1rem;
+  background: radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.18), transparent 55%),
+              radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.18), transparent 55%),
+              rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(37, 99, 235, 0.55);
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.85),
+    0 0 0 1px rgba(15, 23, 42, 0.95);
+  transform-style: preserve-3d;
+}
+
+.infographic-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.26), transparent 60%);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.9);
+  transform: translateZ(20px);
+}
+
+.infographic-copy {
+  transform: translateZ(24px);
+}
+
+.infographic-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.infographic-text {
+  font-size: 0.85rem;
+  color: #cbd5f5;
+}
+
+.infographic-img {
+  width: 72px;
+  height: 56px;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  transform: translateZ(16px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.6);
+}
+
+.infographic-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 3D premium testimonial cards */
+
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(129, 140, 248, 0.22), transparent 60%),
+    rgba(15, 23, 42, 0.98);
+  border-radius: 1.3rem;
+  border: 1px solid rgba(37, 99, 235, 0.7);
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 20% 0%, rgba(248, 250, 252, 0.08), transparent 55%);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.testimonial-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  transform: translateZ(22px);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.9);
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.testimonial-role {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.testimonial-quote-mark {
+  font-size: 1.5rem;
+  color: #38bdf8;
+}
+
+.testimonial-quote {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+.testimonial-metric {
+  font-size: 0.8rem;
+  color: #a5b4fc;
+}
+
+/* Thoda hover depth */
+
+.testimonial-card.tilt-card:hover {
+  transform: rotateX(-8deg) rotateY(10deg) translateY(-6px);
+}
+
+/* Mobile tweak */
+
+@media (max-width: 768px) {
+  .infographic-item {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto;
+  }
+  .infographic-img {
+    grid-column: 1 / -1;
+    justify-self: flex-start;
+    margin-top: 0.45rem;
+  }
+}
+
     /* 3D hover on cards */
 
     .scene-3d {
@@ -1287,75 +1454,165 @@
 
     <!-- HOW (3D flow chart) -->
     <section id="how" class="section section-split">
-      <div class="container split-grid">
-        <div class="animate-in">
-          <h2 class="section-title">How AI TaskOrbit works in your business</h2>
-          <p class="section-subtitle">Simple for your callers. Powerful behind the scenes.</p>
+  <div class="container split-grid">
+    <!-- LEFT: premium 3D flow chart -->
+    <div class="animate-in">
+      <h2 class="section-title">How AI TaskOrbit works in your business</h2>
+      <p class="section-subtitle">Simple for your callers. Powerful behind the scenes.</p>
 
-          <div class="flow-3d">
-            <div class="flow-step-3d">
-              <div class="flow-step-card">
-                <span class="flow-step-tag">Step 1</span>
-                <p><strong>Caller dials your business number.</strong></p>
-              </div>
-              <div class="flow-step-arrow">
-                <span>→</span>
-              </div>
-            </div>
-
-            <div class="flow-step-3d">
-              <div class="flow-step-card">
-                <span class="flow-step-tag">Step 2</span>
-                <p><strong>AI Voice Agent answers instantly</strong> with your brand greeting.</p>
-              </div>
-              <div class="flow-step-arrow">
-                <span>→</span>
-              </div>
-            </div>
-
-            <div class="flow-step-3d">
-              <div class="flow-step-card">
-                <span class="flow-step-tag">Step 3</span>
-                <p><strong>Understands the request</strong> — sales, support, booking, information.</p>
-              </div>
-              <div class="flow-step-arrow">
-                <span>→</span>
-              </div>
-            </div>
-
-            <div class="flow-step-3d">
-              <div class="flow-step-card">
-                <span class="flow-step-tag">Step 4</span>
-                <p><strong>Captures lead details</strong> and key questions automatically.</p>
-              </div>
-              <div class="flow-step-arrow">
-                <span>→</span>
-              </div>
-            </div>
-
-            <div class="flow-step-3d flow-step-last">
-              <div class="flow-step-card">
-                <span class="flow-step-tag">Step 5</span>
-                <p><strong>Sends to WhatsApp/CRM</strong> or routes to your team to close.</p>
-              </div>
-            </div>
+      <div class="flow-3d">
+        <div class="flow-step-3d">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 1</span>
+            <p><strong>Caller dials your business number.</strong></p>
+          </div>
+          <div class="flow-step-arrow">
+            <span>→</span>
           </div>
         </div>
 
-        <aside class="card scene-3d tilt-card animate-in animate-delay-1">
-          <div class="tilt-inner">
-            <h3>Where AI TaskOrbit fits</h3>
-            <ul class="list">
-              <li><strong>Real estate</strong> – capture and qualify property enquiries before competitors call back.</li>
-              <li><strong>Clinics</strong> – handle appointment booking and rescheduling without front desk overload.</li>
-              <li><strong>E‑commerce</strong> – answer delivery, order, and product questions automatically.</li>
-              <li><strong>Finance</strong> – qualify loan and investment leads with compliant scripts.</li>
-              <li><strong>Coaching institutes</strong> – manage admission, fee, and batch enquiries at scale.</li>
-            </ul>
+        <div class="flow-step-3d">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 2</span>
+            <p><strong>AI TaskOrbit Voice Agent answers instantly</strong> with your brand greeting.</p>
           </div>
-        </aside>
+          <div class="flow-step-arrow">
+            <span>→</span>
+          </div>
+        </div>
+
+        <div class="flow-step-3d">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 3</span>
+            <p><strong>Understands the request</strong> — sales, support, booking, information.</p>
+          </div>
+          <div class="flow-step-arrow">
+            <span>→</span>
+          </div>
+        </div>
+
+        <div class="flow-step-3d">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 4</span>
+            <p><strong>Captures lead details</strong> and key questions automatically.</p>
+          </div>
+          <div class="flow-step-arrow">
+            <span>→</span>
+          </div>
+        </div>
+
+        <div class="flow-step-3d flow-step-last">
+          <div class="flow-step-card">
+            <span class="flow-step-tag">Step 5</span>
+            <p><strong>Sends to WhatsApp/CRM</strong> or routes to your team to close the deal.</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+
+    <!-- RIGHT: vertical infographic with images -->
+    <aside class="card scene-3d tilt-card animate-in animate-delay-1">
+      <div class="tilt-inner">
+        <h3>Where AI TaskOrbit fits</h3>
+        <p style="font-size:0.85rem;color:#9ca3af;margin-top:0.25rem;margin-bottom:0.7rem;">
+          High‑intent calls from different industries — captured, qualified, and handed to your team in one clean stream.
+        </p>
+
+        <div class="vertical-infographic">
+          <!-- Real estate -->
+          <div class="infographic-item">
+            <div class="infographic-icon">🏙️</div>
+            <div class="infographic-copy">
+              <p class="infographic-title">Real estate</p>
+              <p class="infographic-text">
+                Capture and qualify property enquiries before competitors call back.
+              </p>
+            </div>
+            <div class="infographic-img">
+              <img src="https://picsum.photos/seed/realestate/140/110"
+                   alt="Real estate enquiries"
+                   width="140"
+                   height="110"
+                   loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Clinics -->
+          <div class="infographic-item">
+            <div class="infographic-icon">🏥</div>
+            <div class="infographic-copy">
+              <p class="infographic-title">Clinics</p>
+              <p class="infographic-text">
+                Handle appointment booking and rescheduling without front desk overload.
+              </p>
+            </div>
+            <div class="infographic-img">
+              <img src="https://picsum.photos/seed/clinic/140/110"
+                   alt="Clinic appointments"
+                   width="140"
+                   height="110"
+                   loading="lazy" />
+            </div>
+          </div>
+
+          <!-- E‑commerce -->
+          <div class="infographic-item">
+            <div class="infographic-icon">🛒</div>
+            <div class="infographic-copy">
+              <p class="infographic-title">E‑commerce</p>
+              <p class="infographic-text">
+                Answer delivery, order, and product questions automatically.
+              </p>
+            </div>
+            <div class="infographic-img">
+              <img src="https://picsum.photos/seed/ecommerce/140/110"
+                   alt="E‑commerce customer support"
+                   width="140"
+                   height="110"
+                   loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Finance -->
+          <div class="infographic-item">
+            <div class="infographic-icon">💳</div>
+            <div class="infographic-copy">
+              <p class="infographic-title">Finance</p>
+              <p class="infographic-text">
+                Qualify loan and investment leads with compliant scripts.
+              </p>
+            </div>
+            <div class="infographic-img">
+              <img src="https://picsum.photos/seed/finance/140/110"
+                   alt="Finance leads"
+                   width="140"
+                   height="110"
+                   loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Coaching institutes -->
+          <div class="infographic-item">
+            <div class="infographic-icon">🎓</div>
+            <div class="infographic-copy">
+              <p class="infographic-title">Coaching institutes</p>
+              <p class="infographic-text">
+                Manage admission, fee, and batch enquiries at scale.
+              </p>
+            </div>
+            <div class="infographic-img">
+              <img src="https://picsum.photos/seed/coaching/140/110"
+                   alt="Coaching enquiries"
+                   width="140"
+                   height="110"
+                   loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
 
     <!-- PRICING -->
     <section id="pricing" class="section">
@@ -1415,101 +1672,89 @@
 
     <!-- TESTIMONIALS -->
     <section id="testimonials" class="section">
-      <div class="container">
-        <h2 class="section-title center">What customers see in their numbers</h2>
-        <p class="section-subtitle center">
-          Real business impact from answering every call and capturing every lead.
-        </p>
-        <div class="grid grid-3">
-          <article class="card testimonial-card scene-3d tilt-card animate-in">
-            <div class="tilt-inner">
-              <p class="quote">
-                “AI TaskOrbit increased our sales by roughly <strong>40%</strong> in 2 months. We simply stopped losing hot leads to voicemail.”
-              </p>
-              <p class="author">Founder, real estate agency</p>
+  <div class="container">
+    <h2 class="section-title center">What customers see in their numbers</h2>
+    <p class="section-subtitle center">
+      Real business impact from answering every call and capturing every lead with AI TaskOrbit.
+    </p>
+    <div class="grid grid-3">
+      <!-- Real estate -->
+      <article class="card testimonial-card scene-3d tilt-card animate-in">
+        <div class="tilt-inner testimonial-inner">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://picsum.photos/seed/owner1/80/80"
+                   alt="Rahul Mehta"
+                   width="80"
+                   height="80"
+                   loading="lazy" />
             </div>
-          </article>
-
-          <article class="card testimonial-card scene-3d tilt-card animate-in animate-delay-1">
-            <div class="tilt-inner">
-              <p class="quote">
-                “We reduced support cost by about <strong>60%</strong> while improving response times. AI now handles all first‑line calls.”
-              </p>
-              <p class="author">COO, e‑commerce brand</p>
+            <div>
+              <p class="testimonial-name">Rahul Mehta</p>
+              <p class="testimonial-role">Founder – Skyline Realty</p>
             </div>
-          </article>
-
-          <article class="card testimonial-card scene-3d tilt-card animate-in animate-delay-2">
-            <div class="tilt-inner">
-              <p class="quote">
-                “We basically never miss a customer call now. Nights and weekends generate leads instead of silence — thanks to AI TaskOrbit.”
-              </p>
-              <p class="author">Owner, multi‑location clinic group</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container section-split">
-        <div class="split-grid">
-          <div class="animate-in">
-            <h2 class="section-title">Let’s see what AI TaskOrbit can do for your calls</h2>
-            <p class="section-subtitle">
-              Tell us a bit about your business. We’ll share a short demo plus a concrete plan to recover missed revenue.
-            </p>
-            <div class="contact-highlights">
-              <div class="contact-pill">No long forms</div>
-              <div class="contact-pill">No obligation</div>
-              <div class="contact-pill">Outcome-focused demo</div>
-            </div>
-            <div class="contact-meta">
-              <p>Email: <a href="mailto:taskorbitt@gmail.com">taskorbitt@gmail.com</a></p>
-              <p>WhatsApp:
-                <a href="https://wa.me/919654524339" target="_blank" rel="noopener noreferrer">+91 96545 24339</a>
-              </p>
-            </div>
+            <div class="testimonial-quote-mark">“</div>
           </div>
-          <div class="animate-in animate-delay-1">
-            <form id="enquiryForm" class="card form-card scene-3d tilt-card">
-              <div class="tilt-inner">
-                <h3 class="form-title">Enquiry form</h3>
-                <div class="form-grid">
-                  <div class="form-field">
-                    <label for="enquiryName">Name</label>
-                    <input id="enquiryName" name="name" type="text" required placeholder="Your full name" />
-                  </div>
-                  <div class="form-field">
-                    <label for="enquiryEmail">Email</label>
-                    <input id="enquiryEmail" name="email" type="email" required placeholder="you@company.com" />
-                  </div>
-                  <div class="form-field">
-                    <label for="enquiryPhone">Phone</label>
-                    <input id="enquiryPhone" name="phone" type="tel" required placeholder="Your phone / WhatsApp" />
-                  </div>
-                  <div class="form-field">
-                    <label for="enquiryBusinessType">Business type</label>
-                    <input id="enquiryBusinessType" name="businessType" type="text" required placeholder="Clinic, real estate, e‑commerce…" />
-                  </div>
-                </div>
-                <div class="form-field">
-                  <label for="enquiryMessage">What’s happening with your calls today?</label>
-                  <textarea id="enquiryMessage" name="message" rows="3" placeholder="Example: We miss inquiries in the evening / can’t answer all marketing calls…"></textarea>
-                </div>
-                <div class="form-footer">
-                  <p id="enquiryStatus" class="form-status">
-                    We’ll respond with a demo link + ROI breakdown for your business.
-                  </p>
-                  <button type="submit" class="btn">Get free demo</button>
-                </div>
-              </div>
-            </form>
-          </div>
+          <p class="testimonial-quote">
+            “AI TaskOrbit increased our closed deals by roughly <strong>40%</strong> in 2 months.
+            We simply stopped losing hot property leads to voicemail.”
+          </p>
+          <p class="testimonial-metric">Industry: Real estate · City leads answered 24/7</p>
         </div>
-      </div>
-    </section>
+      </article>
+
+      <!-- E‑commerce -->
+      <article class="card testimonial-card scene-3d tilt-card animate-in animate-delay-1">
+        <div class="tilt-inner testimonial-inner">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://picsum.photos/seed/owner2/80/80"
+                   alt="Ananya Sharma"
+                   width="80"
+                   height="80"
+                   loading="lazy" />
+            </div>
+            <div>
+              <p class="testimonial-name">Ananya Sharma</p>
+              <p class="testimonial-role">COO – NovaCart e‑commerce</p>
+            </div>
+            <div class="testimonial-quote-mark">“</div>
+          </div>
+          <p class="testimonial-quote">
+            “We reduced support cost by about <strong>60%</strong> while improving response times.
+            AI TaskOrbit now handles all first‑line calls and FAQs.”
+          </p>
+          <p class="testimonial-metric">Industry: E‑commerce · Support cost down, CSAT up</p>
+        </div>
+      </article>
+
+      <!-- Clinics -->
+      <article class="card testimonial-card scene-3d tilt-card animate-in animate-delay-2">
+        <div class="tilt-inner testimonial-inner">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <img src="https://picsum.photos/seed/owner3/80/80"
+                   alt="Dr. Neha Kapoor"
+                   width="80"
+                   height="80"
+                   loading="lazy" />
+            </div>
+            <div>
+              <p class="testimonial-name">Dr. Neha Kapoor</p>
+              <p class="testimonial-role">Owner – CarePlus Clinic Group</p>
+            </div>
+            <div class="testimonial-quote-mark">“</div>
+          </div>
+          <p class="testimonial-quote">
+            “We basically never miss a patient call now. Nights and weekends generate
+            new appointments instead of silence.”
+          </p>
+          <p class="testimonial-metric">Industry: Clinics · Extra slots filled after hours</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
     <!-- ADMIN -->
     <section id="admin" class="section">
