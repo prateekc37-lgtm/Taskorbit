@@ -1157,158 +1157,145 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
   <style>
     /* 3D flow chart for "How TaskOrbitt works" */
 
-    .flow-3d {
-      margin-top: 1.5rem;
-      display: grid;
-      gap: 1.25rem;
-      position: relative;
-      perspective: 1200px;
-      perspective-origin: 50% 40%;
-    }
+   /* 3D flow chart for "How TaskOrbitt works" */
 
-    .flow-3d::before {
-      content: "";
-      position: absolute;
-      left: 1rem;
-      top: 0.5rem;
-      bottom: 2rem;
-      width: 2px;
-      background: linear-gradient(
-        to bottom,
-        rgba(148, 163, 184, 0.1),
-        rgba(56, 189, 248, 0.65)
-      );
-      pointer-events: none;
-    }
+.flow-3d {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+  position: relative;
+  perspective: 1200px;
+  perspective-origin: 50% 40%;
+}
 
-    /* Ek-ek step card */
+.flow-3d::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  bottom: 2rem;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(148, 163, 184, 0.1), rgba(56, 189, 248, 0.65));
+  pointer-events: none;
+}
 
-    .flow-step-3d {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      column-gap: 0.8rem;
-      align-items: center;
-      position: relative;
-      transform-style: preserve-3d;
-    }
+/* Ek-ek step card */
 
-    .flow-step-card {
-      background: rgba(15, 23, 42, 0.98);
-      border-radius: 1rem;
-      border: 1px solid rgba(30, 64, 175, 0.7);
-      padding: 0.9rem 1rem;
-      box-shadow:
-        0 20px 45px rgba(15, 23, 42, 0.85),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
-      transform: translateZ(22px) rotateX(-6deg) rotateY(6deg);
-      transition:
-        transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
-        box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1),
-        border-color 0.3s ease;
-    }
+.flow-step-3d {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.8rem;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+}
 
-    .flow-step-card p {
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
+.flow-step-card {
+  background: rgba(15, 23, 42, 0.98);
+  border-radius: 1rem;
+  border: 1px solid rgba(30, 64, 175, 0.7);
+  padding: 0.9rem 1rem;
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.85),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  transform: translateZ(22px) rotateX(-6deg) rotateY(6deg);
+  transition:
+    transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 0.3s ease;
+}
 
-    .flow-step-tag {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #bfdbfe;
-      padding: 0.16rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.8);
-      margin-bottom: 0.35rem;
-      background: rgba(15, 23, 42, 0.98);
-    }
+.flow-step-card p {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
 
-    /* Arrow column */
+.flow-step-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #bfdbfe;
+  padding: 0.16rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.8);
+  margin-bottom: 0.35rem;
+  background: rgba(15, 23, 42, 0.98);
+}
 
-    .flow-step-arrow {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #7dd3fc;
-      font-size: 1.1rem;
-      background: radial-gradient(
-        circle at 30% 30%,
-        rgba(56, 189, 248, 0.2),
-        transparent 55%
-      );
-      transform: translateZ(10px);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
-      position: relative;
-    }
+/* Arrow column */
 
-    .flow-step-arrow span {
-      display: block;
-      animation: arrow-pulse 1.6s ease-in-out infinite;
-    }
+.flow-step-arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7dd3fc;
+  font-size: 1.1rem;
+  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.2), transparent 55%);
+  transform: translateZ(10px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+  position: relative;
+}
 
-    /* Hover 3D effect */
+.flow-step-arrow span {
+  display: block;
+  animation: arrow-pulse 1.6s ease-in-out infinite;
+}
 
-    .flow-step-3d:hover .flow-step-card {
-      transform: translateZ(40px) rotateX(-4deg) rotateY(10deg) translateY(-4px);
-      box-shadow:
-        0 26px 70px rgba(15, 23, 42, 0.9),
-        0 0 0 1px rgba(56, 189, 248, 0.85);
-      border-color: rgba(56, 189, 248, 0.9);
-    }
+/* Hover 3D effect */
 
-    /* Last step without arrow */
+.flow-step-3d:hover .flow-step-card {
+  transform: translateZ(40px) rotateX(-4deg) rotateY(10deg) translateY(-4px);
+  box-shadow:
+    0 26px 70px rgba(15, 23, 42, 0.9),
+    0 0 0 1px rgba(56, 189, 248, 0.85);
+  border-color: rgba(56, 189, 248, 0.9);
+}
 
-    .flow-step-last .flow-step-arrow {
-      display: none;
-    }
+/* Last step without arrow */
 
-    /* Arrow glow animation */
+.flow-step-last .flow-step-arrow {
+  display: none;
+}
 
-    @keyframes arrow-pulse {
-      0%,
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-      50% {
-        transform: translateX(4px);
-        opacity: 0.7;
-      }
-    }
+/* Arrow glow animation */
 
-    /* Desktop layout: horizontal steps */
+@keyframes arrow-pulse {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50%      { transform: translateX(4px); opacity: 0.7; }
+}
 
-    @media (min-width: 960px) {
-      .flow-3d {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 1.4rem;
-      }
+/* Desktop layout: horizontal steps */
 
-      .flow-3d::before {
-        display: none;
-      }
+@media (min-width: 960px) {
+  .flow-3d {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.4rem;
+  }
 
-      .flow-step-3d {
-        grid-template-columns: 1fr;
-        justify-items: center;
-      }
+  .flow-3d::before {
+    display: none;
+  }
 
-      .flow-step-arrow {
-        margin-top: 0.7rem;
-      }
+  .flow-step-3d {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 
-      .flow-step-last .flow-step-card {
-        transform: translateZ(26px) rotateX(-6deg) rotateY(0deg);
-      }
-    }
+  .flow-step-arrow {
+    margin-top: 0.7rem;
+  }
+
+  .flow-step-last .flow-step-card {
+    transform: translateZ(26px) rotateX(-6deg) rotateY(0deg);
+  }
+}
   </style>
 
   <div class="container split-grid">
