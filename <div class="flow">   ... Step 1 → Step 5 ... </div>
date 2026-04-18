@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> AI TaskOrbit  – Never Miss a Customer Call Again</title>
-  <meta name="description" content="AI TaskOrbit  Voice Agent answers, qualifies, and converts customer calls 24/7 so you save time, cut costs, and capture more revenue." />
+  <title>AI TaskOrbit – Never Miss a Customer Call Again</title>
+  <meta name="description" content="AI TaskOrbit Voice Agent answers, qualifies, and converts customer calls 24/7 so you save time, cut costs, and capture more revenue." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -38,17 +38,18 @@
       overflow-x: hidden;
     }
 
-    /* Animated gradient background layer */
+    /* Animated gradient / tint 3D background layer */
     body::before {
       content: "";
       position: fixed;
       inset: -40%;
       z-index: -1;
-      background: radial-gradient(circle at 0% 0%, #22c55e 0, transparent 45%),
-                  radial-gradient(circle at 100% 0%, #0ea5e9 0, transparent 45%),
-                  radial-gradient(circle at 0% 100%, #6366f1 0, transparent 45%),
-                  radial-gradient(circle at 100% 100%, #f97316 0, transparent 45%);
-      opacity: 0.65;
+      background:
+        radial-gradient(circle at 0% 0%, #22c55e 0, transparent 45%),
+        radial-gradient(circle at 100% 0%, #0ea5e9 0, transparent 45%),
+        radial-gradient(circle at 0% 100%, #6366f1 0, transparent 45%),
+        radial-gradient(circle at 100% 100%, #f97316 0, transparent 45%);
+      opacity: 0.7;
       filter: blur(40px);
       transform: translate3d(0, 0, 0);
       animation: bg-orbit 26s ease-in-out infinite alternate;
@@ -61,15 +62,13 @@
       }
       50% {
         transform: translate3d(40px, 40px, 0) scale(1.05);
-        opacity: 0.9;
+        opacity: 0.95;
       }
       100% {
         transform: translate3d(-20px, 60px, 0) scale(1.02);
         opacity: 0.7;
       }
     }
-
-    /* Layout */
 
     .container {
       max-width: 1120px;
@@ -129,7 +128,7 @@
       color: inherit;
     }
 
-    /* Animated logo similar feel to meetsansara */
+    /* Animated logo with 3D tint feel */
     .logo-mark {
       width: 36px;
       height: 36px;
@@ -280,6 +279,7 @@
     }
 
     /* Parallax root – 3D tilt for whole hero area */
+
     .parallax-root {
       perspective: 1200px;
       perspective-origin: 50% 40%;
@@ -386,7 +386,7 @@
       content: "";
       position: absolute;
       inset: -40%;
-      background: radial-gradient(circle at 20% 0%, rgba(251, 191, 36, 0.15), transparent 55%);
+      background: radial-gradient(circle at 20% 0%, rgba(251, 191, 36, 0.18), transparent 55%);
       opacity: 0.7;
       mix-blend-mode: screen;
       pointer-events: none;
@@ -835,6 +835,142 @@
       border-color: rgba(56, 189, 248, 0.85);
     }
 
+    /* 3D flow chart for "How AI TaskOrbit works" */
+
+    .flow-3d {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 1.25rem;
+      position: relative;
+      perspective: 1200px;
+      perspective-origin: 50% 40%;
+    }
+
+    .flow-3d::before {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      top: 0.5rem;
+      bottom: 2rem;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        rgba(148, 163, 184, 0.1),
+        rgba(56, 189, 248, 0.65)
+      );
+      pointer-events: none;
+    }
+
+    .flow-step-3d {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.8rem;
+      align-items: center;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    .flow-step-card {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: 1rem;
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      padding: 0.9rem 1rem;
+      box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.85),
+        0 0 0 1px rgba(15, 23, 42, 0.9);
+      transform: translateZ(22px) rotateX(-6deg) rotateY(6deg);
+      transition:
+        transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+        box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+        border-color 0.3s ease;
+    }
+
+    .flow-step-card p {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .flow-step-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #bfdbfe;
+      padding: 0.16rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.8);
+      margin-bottom: 0.35rem;
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .flow-step-arrow {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7dd3fc;
+      font-size: 1.1rem;
+      background: radial-gradient(
+        circle at 30% 30%,
+        rgba(56, 189, 248, 0.2),
+        transparent 55%
+      );
+      transform: translateZ(10px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+      position: relative;
+    }
+
+    .flow-step-arrow span {
+      display: block;
+      animation: arrow-pulse 1.6s ease-in-out infinite;
+    }
+
+    .flow-step-3d:hover .flow-step-card {
+      transform: translateZ(40px) rotateX(-4deg) rotateY(10deg) translateY(-4px);
+      box-shadow:
+        0 26px 70px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(56, 189, 248, 0.85);
+      border-color: rgba(56, 189, 248, 0.9);
+    }
+
+    .flow-step-last .flow-step-arrow {
+      display: none;
+    }
+
+    @keyframes arrow-pulse {
+      0%, 100% { transform: translateX(0); opacity: 1; }
+      50%      { transform: translateX(4px); opacity: 0.7; }
+    }
+
+    @media (min-width: 960px) {
+      .flow-3d {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 1.4rem;
+      }
+
+      .flow-3d::before {
+        display: none;
+      }
+
+      .flow-step-3d {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .flow-step-arrow {
+        margin-top: 0.7rem;
+      }
+
+      .flow-step-last .flow-step-card {
+        transform: translateZ(26px) rotateX(-6deg) rotateY(0deg);
+      }
+    }
+
     /* Simple fade-up animation */
 
     @keyframes fade-up {
@@ -928,7 +1064,7 @@
       </a>
       <nav class="nav" aria-label="Main navigation">
         <button class="nav-link" data-scroll="#about">About</button>
-        <button class="nav-link" data-scroll="#why">Why TaskOrbit</button>
+        <button class="nav-link" data-scroll="#why">Why AI TaskOrbit</button>
         <button class="nav-link" data-scroll="#roi">ROI</button>
         <button class="nav-link" data-scroll="#features">Features</button>
         <button class="nav-link" data-scroll="#pricing">Pricing</button>
@@ -965,7 +1101,7 @@
               <button class="btn btn-outline" data-scroll="#contact">Talk to sales</button>
             </div>
             <p class="hero-footnote">
-              See exactly how much time, money, and revenue you’re losing to missed and delayed calls — and how TaskOrbit fixes it in days.
+              See exactly how much time, money, and revenue you’re losing to missed and delayed calls — and how AI TaskOrbit fixes it in days.
             </p>
           </div>
 
@@ -991,7 +1127,7 @@
                 <div class="math-row"><span>Value per customer</span><span>₹1,000</span></div>
                 <div class="math-row math-row-strong"><span>Revenue lost / month</span><span>₹150,000</span></div>
                 <p class="math-note">
-                  TaskOrbit turns these lost calls into answered conversations, qualified leads, and booked revenue.
+                  AI TaskOrbit turns these lost calls into answered conversations, qualified leads, and booked revenue.
                 </p>
               </div>
             </div>
@@ -1005,8 +1141,7 @@
       <div class="container">
         <h2 class="section-title">About AI TaskOrbit</h2>
         <p class="section-subtitle">
-          I TaskOrbit is a next-generation automation solutions company specializing in AI-powered voice agents and business process automation.
-We help businesses eliminate missed opportunities, reduce operational workload, and enhance customer experience through intelligent, human-like AI systems.iness.
+          AI TaskOrbit is a next‑generation automation company focused on AI voice agents and workflows. We help clinics, real estate teams, e‑commerce brands and more eliminate missed calls, reduce manual workload, and give every customer a fast, human‑like experience.
         </p>
         <div class="grid grid-3">
           <article class="card scene-3d tilt-card">
@@ -1024,7 +1159,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
           <article class="card scene-3d tilt-card">
             <div class="tilt-inner">
               <h3>How we work</h3>
-              <p>We deploy fast, plug into your existing numbers, CRM, and WhatsApp, and iterate with you on scripts until AI TaskOrbitt feels like part of your team.</p>
+              <p>We deploy fast, plug into your existing numbers, CRM, and WhatsApp, and iterate with you on scripts until AI TaskOrbit feels like part of your team.</p>
             </div>
           </article>
         </div>
@@ -1048,7 +1183,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
           </ul>
         </div>
         <div class="animate-in animate-delay-1">
-          <div class="pill">How TaskOrbit fixes it</div>
+          <div class="pill">How AI TaskOrbit fixes it</div>
           <ul class="list list-icon list-success">
             <li><span>AI answers every call instantly, within a second of the first ring.</span></li>
             <li><span>Never sleeps, never gets overwhelmed, never asks for leave.</span></li>
@@ -1067,7 +1202,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
       <div class="container">
         <h2 class="section-title center">See the ROI clearly</h2>
         <p class="section-subtitle center">
-          TaskOrbit AI pays for itself quickly by saving you on staffing, capturing more leads, and keeping your business always-on.
+          AI TaskOrbit pays for itself quickly by saving you on staffing, capturing more leads, and keeping your business always-on.
         </p>
         <div class="grid grid-4">
           <article class="card scene-3d tilt-card animate-in">
@@ -1107,7 +1242,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
       <div class="container">
         <h2 class="section-title center">Platform capabilities built for revenue teams</h2>
         <p class="section-subtitle center">
-          More than a bot — TaskOrbit is your always-on, always-learning frontline for inbound calls.
+          More than a bot — AI TaskOrbit is your always-on, always-learning frontline for inbound calls.
         </p>
         <div class="grid grid-3">
           <article class="card scene-3d tilt-card animate-in">
@@ -1150,225 +1285,78 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
       </div>
     </section>
 
-    <!-- HOW -->
-    <!-- REPLACE your existing <section id="how"> ... </section> with this full block -->
-<section id="how" class="section section-split">
-  <!-- 3D FLOW CHART CSS (inline for this section) -->
-  <style>
-    /* 3D flow chart for "How TaskOrbitt works" */
+    <!-- HOW (3D flow chart) -->
+    <section id="how" class="section section-split">
+      <div class="container split-grid">
+        <div class="animate-in">
+          <h2 class="section-title">How AI TaskOrbit works in your business</h2>
+          <p class="section-subtitle">Simple for your callers. Powerful behind the scenes.</p>
 
-   /* 3D flow chart for "How TaskOrbitt works" */
+          <div class="flow-3d">
+            <div class="flow-step-3d">
+              <div class="flow-step-card">
+                <span class="flow-step-tag">Step 1</span>
+                <p><strong>Caller dials your business number.</strong></p>
+              </div>
+              <div class="flow-step-arrow">
+                <span>→</span>
+              </div>
+            </div>
 
-.flow-3d {
-  margin-top: 1.5rem;
-  display: grid;
-  gap: 1.25rem;
-  position: relative;
-  perspective: 1200px;
-  perspective-origin: 50% 40%;
-}
+            <div class="flow-step-3d">
+              <div class="flow-step-card">
+                <span class="flow-step-tag">Step 2</span>
+                <p><strong>AI Voice Agent answers instantly</strong> with your brand greeting.</p>
+              </div>
+              <div class="flow-step-arrow">
+                <span>→</span>
+              </div>
+            </div>
 
-.flow-3d::before {
-  content: "";
-  position: absolute;
-  left: 1rem;
-  top: 0.5rem;
-  bottom: 2rem;
-  width: 2px;
-  background: linear-gradient(to bottom, rgba(148, 163, 184, 0.1), rgba(56, 189, 248, 0.65));
-  pointer-events: none;
-}
+            <div class="flow-step-3d">
+              <div class="flow-step-card">
+                <span class="flow-step-tag">Step 3</span>
+                <p><strong>Understands the request</strong> — sales, support, booking, information.</p>
+              </div>
+              <div class="flow-step-arrow">
+                <span>→</span>
+              </div>
+            </div>
 
-/* Ek-ek step card */
+            <div class="flow-step-3d">
+              <div class="flow-step-card">
+                <span class="flow-step-tag">Step 4</span>
+                <p><strong>Captures lead details</strong> and key questions automatically.</p>
+              </div>
+              <div class="flow-step-arrow">
+                <span>→</span>
+              </div>
+            </div>
 
-.flow-step-3d {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 0.8rem;
-  align-items: center;
-  position: relative;
-  transform-style: preserve-3d;
-}
-
-.flow-step-card {
-  background: rgba(15, 23, 42, 0.98);
-  border-radius: 1rem;
-  border: 1px solid rgba(30, 64, 175, 0.7);
-  padding: 0.9rem 1rem;
-  box-shadow:
-    0 20px 45px rgba(15, 23, 42, 0.85),
-    0 0 0 1px rgba(15, 23, 42, 0.9);
-  transform: translateZ(22px) rotateX(-6deg) rotateY(6deg);
-  transition:
-    transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
-    box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1),
-    border-color 0.3s ease;
-}
-
-.flow-step-card p {
-  font-size: 0.9rem;
-  color: #e5e7eb;
-}
-
-.flow-step-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #bfdbfe;
-  padding: 0.16rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba(56, 189, 248, 0.8);
-  margin-bottom: 0.35rem;
-  background: rgba(15, 23, 42, 0.98);
-}
-
-/* Arrow column */
-
-.flow-step-arrow {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #7dd3fc;
-  font-size: 1.1rem;
-  background: radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.2), transparent 55%);
-  transform: translateZ(10px);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
-  position: relative;
-}
-
-.flow-step-arrow span {
-  display: block;
-  animation: arrow-pulse 1.6s ease-in-out infinite;
-}
-
-/* Hover 3D effect */
-
-.flow-step-3d:hover .flow-step-card {
-  transform: translateZ(40px) rotateX(-4deg) rotateY(10deg) translateY(-4px);
-  box-shadow:
-    0 26px 70px rgba(15, 23, 42, 0.9),
-    0 0 0 1px rgba(56, 189, 248, 0.85);
-  border-color: rgba(56, 189, 248, 0.9);
-}
-
-/* Last step without arrow */
-
-.flow-step-last .flow-step-arrow {
-  display: none;
-}
-
-/* Arrow glow animation */
-
-@keyframes arrow-pulse {
-  0%, 100% { transform: translateX(0); opacity: 1; }
-  50%      { transform: translateX(4px); opacity: 0.7; }
-}
-
-/* Desktop layout: horizontal steps */
-
-@media (min-width: 960px) {
-  .flow-3d {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 1.4rem;
-  }
-
-  .flow-3d::before {
-    display: none;
-  }
-
-  .flow-step-3d {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .flow-step-arrow {
-    margin-top: 0.7rem;
-  }
-
-  .flow-step-last .flow-step-card {
-    transform: translateZ(26px) rotateX(-6deg) rotateY(0deg);
-  }
-}
-  </style>
-
-  <div class="container split-grid">
-    <div class="animate-in">
-      <h2 class="section-title">How TaskOrbitt works in your business</h2>
-      <p class="section-subtitle">Simple for your callers. Powerful behind the scenes.</p>
-
-      <!-- 3D FLOW CHART START -->
-      <div class="flow-3d">
-        <div class="flow-step-3d">
-          <div class="flow-step-card">
-            <span class="flow-step-tag">Step 1</span>
-            <p><strong>Caller dials your business number.</strong></p>
-          </div>
-          <div class="flow-step-arrow">
-            <span>→</span>
+            <div class="flow-step-3d flow-step-last">
+              <div class="flow-step-card">
+                <span class="flow-step-tag">Step 5</span>
+                <p><strong>Sends to WhatsApp/CRM</strong> or routes to your team to close.</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="flow-step-3d">
-          <div class="flow-step-card">
-            <span class="flow-step-tag">Step 2</span>
-            <p><strong>AI Voice Agent answers instantly</strong> with your brand greeting.</p>
+        <aside class="card scene-3d tilt-card animate-in animate-delay-1">
+          <div class="tilt-inner">
+            <h3>Where AI TaskOrbit fits</h3>
+            <ul class="list">
+              <li><strong>Real estate</strong> – capture and qualify property enquiries before competitors call back.</li>
+              <li><strong>Clinics</strong> – handle appointment booking and rescheduling without front desk overload.</li>
+              <li><strong>E‑commerce</strong> – answer delivery, order, and product questions automatically.</li>
+              <li><strong>Finance</strong> – qualify loan and investment leads with compliant scripts.</li>
+              <li><strong>Coaching institutes</strong> – manage admission, fee, and batch enquiries at scale.</li>
+            </ul>
           </div>
-          <div class="flow-step-arrow">
-            <span>→</span>
-          </div>
-        </div>
-
-        <div class="flow-step-3d">
-          <div class="flow-step-card">
-            <span class="flow-step-tag">Step 3</span>
-            <p><strong>Understands the request</strong> — sales, support, booking, information.</p>
-          </div>
-          <div class="flow-step-arrow">
-            <span>→</span>
-          </div>
-        </div>
-
-        <div class="flow-step-3d">
-          <div class="flow-step-card">
-            <span class="flow-step-tag">Step 4</span>
-            <p><strong>Captures lead details</strong> and key questions automatically.</p>
-          </div>
-          <div class="flow-step-arrow">
-            <span>→</span>
-          </div>
-        </div>
-
-        <div class="flow-step-3d flow-step-last">
-          <div class="flow-step-card">
-            <span class="flow-step-tag">Step 5</span>
-            <p><strong>Sends to WhatsApp/CRM</strong> or routes to your team to close.</p>
-          </div>
-        </div>
+        </aside>
       </div>
-      <!-- 3D FLOW CHART END -->
-    </div>
+    </section>
 
-    <aside class="card scene-3d tilt-card animate-in animate-delay-1">
-      <div class="tilt-inner">
-        <h3>Where TaskOrbitt fits</h3>
-        <ul class="list">
-          <li><strong>Real estate</strong> – capture and qualify property enquiries before competitors call back.</li>
-          <li><strong>Clinics</strong> – handle appointment booking and rescheduling without front desk overload.</li>
-          <li><strong>E‑commerce</strong> – answer delivery, order, and product questions automatically.</li>
-          <li><strong>Finance</strong> – qualify loan and investment leads with compliant scripts.</li>
-          <li><strong>Coaching institutes</strong> – manage admission, fee, and batch enquiries at scale.</li>
-        </ul>
-      </div>
-    </aside>
-  </div>
-</section>
     <!-- PRICING -->
     <section id="pricing" class="section">
       <div class="container">
@@ -1436,7 +1424,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
           <article class="card testimonial-card scene-3d tilt-card animate-in">
             <div class="tilt-inner">
               <p class="quote">
-                “TaskOrbit increased our sales by roughly <strong>40%</strong> in 2 months. We simply stopped losing hot leads to voicemail.”
+                “AI TaskOrbit increased our sales by roughly <strong>40%</strong> in 2 months. We simply stopped losing hot leads to voicemail.”
               </p>
               <p class="author">Founder, real estate agency</p>
             </div>
@@ -1454,7 +1442,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
           <article class="card testimonial-card scene-3d tilt-card animate-in animate-delay-2">
             <div class="tilt-inner">
               <p class="quote">
-                “We basically never miss a customer call now. Nights and weekends generate leads instead of silence.”
+                “We basically never miss a customer call now. Nights and weekends generate leads instead of silence — thanks to AI TaskOrbit.”
               </p>
               <p class="author">Owner, multi‑location clinic group</p>
             </div>
@@ -1468,7 +1456,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
       <div class="container section-split">
         <div class="split-grid">
           <div class="animate-in">
-            <h2 class="section-title">Let’s see what TaskOrbit can do for your calls</h2>
+            <h2 class="section-title">Let’s see what AI TaskOrbit can do for your calls</h2>
             <p class="section-subtitle">
               Tell us a bit about your business. We’ll share a short demo plus a concrete plan to recover missed revenue.
             </p>
@@ -1528,7 +1516,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
       <div class="container">
         <h2 class="section-title">Lead overview (demo admin dashboard)</h2>
         <p class="section-subtitle">
-          TaskOrbit AI plugs into your systems so you can see every call, every lead, and every opportunity in one place.
+          AI TaskOrbit plugs into your systems so you can see every call, every lead, and every opportunity in one place.
         </p>
         <div class="grid grid-3">
           <article class="card metric-card scene-3d tilt-card animate-in">
@@ -1557,7 +1545,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
           <div class="admin-table-header">
             <h3>Leads</h3>
             <p class="admin-table-sub">
-              This demo dashboard shows leads from your enquiry form in real time. In production, TaskOrbitt connects to your CRM.
+              This demo dashboard shows leads from your enquiry form in real time. In production, AI TaskOrbit connects to your CRM.
             </p>
           </div>
           <div class="table-wrapper">
@@ -1629,7 +1617,7 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
       }
     })();
 
-    // Live revenue estimate (static calc)
+    // Live revenue estimate
     (function () {
       const liveEl = document.getElementById("liveRevenue");
       if (!liveEl) return;
@@ -1746,8 +1734,8 @@ We help businesses eliminate missed opportunities, reduce operational workload, 
         const xRatio = (e.clientX / window.innerWidth) - 0.5;
         const yRatio = (e.clientY / window.innerHeight) - 0.5;
         const maxTilt = 10;
-        targetY = xRatio * maxTilt * -1; // rotateY
-        targetX = yRatio * maxTilt;      // rotateX
+        targetY = xRatio * maxTilt * -1;
+        targetX = yRatio * maxTilt;
         if (!rafId) rafId = requestAnimationFrame(animate);
       }
 
